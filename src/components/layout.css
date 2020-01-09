@@ -29,6 +29,11 @@ li {
   color: #000;
 }
 
+.header {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
 .project-page,
 h1,
 h2,

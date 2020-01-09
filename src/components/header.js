@@ -5,30 +5,54 @@ import React from "react"
 const Header = ( { siteTitle } ) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#eee`,
       marginBottom: `1.45rem`,
     }}
   >
-    <div
+    <div className="header"
       style={{
         margin: `0 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-            fontWeight: `300`,
-            fontFamily: `Montserrat`
-          }}
-        >
-          {siteTitle}
+      <Link
+        to="/"
+        style={{
+          color: `#000`,
+          textDecoration: `none`,
+          fontWeight: `300`,
+          fontFamily: `Montserrat, sans-serif`,
+          marginInlineEnd: `1rem`
+        }}
+      >
+        Home
         </Link>
-      </h1>
+      <Link
+        to="/projects"
+        style={{
+          color: `#000`,
+          textDecoration: `none`,
+          fontWeight: `300`,
+          fontFamily: `Montserrat, sans-serif`,
+          marginInlineEnd: `1rem`
+        }}
+      >
+        Projects
+        </Link>
+
+      <Link
+        to="/contact"
+        style={{
+          color: `#000`,
+          textDecoration: `none`,
+          fontWeight: `300`,
+          fontFamily: `Montserrat, sans-serif`,
+          marginInlineEnd: `1rem`
+        }}
+      >
+        Contacts
+        </Link>
     </div>
   </header>
 )
