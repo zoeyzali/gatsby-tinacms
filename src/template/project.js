@@ -24,7 +24,7 @@ function Project( props ) {
 
     return (
         <Layout>
-            <div className="container">
+            <div className="container project-page">
                 <article>
                     <figure>
                         <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} />
@@ -34,9 +34,10 @@ function Project( props ) {
                         <h3>{data.frontmatter.date}</h3>
                     </div>
                     <div className="project-body" dangerouslySetInnerHTML={{ __html: data.html }}>
+                        {data.frontmatter.description}
                     </div>
                     <div className="footer">
-                        <h2>{data.frontmatter.author}</h2>
+                        <h4>{data.frontmatter.author}</h4>
                         <Link to={`projects/${nextSlug}`} className={"blogTemplateStyles.footer__next"}></Link>
                     </div>
                 </article>
@@ -53,7 +54,7 @@ const ProjectTemplateOptions = {
             component: "text"
         },
         {
-            label: "Data Posted",
+            label: "Date Posted",
             name: "rawFrontmatter.date",
             component: "date"
         },
@@ -70,18 +71,23 @@ const ProjectTemplateOptions = {
                 return markdownRemark.frontmatter.hero_image.childImageSharp.fluid.src
             },
         },
-
-        /* {
-                label: "Author",
-name: 'rawFrontmatter.author',
-component: "text"
-},
         {
-                label: "Project Body",
-name: 'rawMarkdownBody',
-component: "markdown"
-},
-*/
+            label: "Description",
+            name: "frontmatter.description",
+            description: "Enter the project description",
+            component: "textarea",
+        },
+        {
+            label: "Author",
+            name: 'rawFrontmatter.author',
+            component: "text"
+        },
+        {
+            label: "Project Body",
+            name: 'rawMarkdownBody',
+            component: "markdown"
+        },
+
     ]
 }
 

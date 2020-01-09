@@ -11,7 +11,7 @@ const BlogPostForm = {
         {
             label: "Description",
             name: "frontmatter.description",
-            description: "Enter the post description",
+            description: "Enter the project description",
             component: "textarea",
         },
     ],
