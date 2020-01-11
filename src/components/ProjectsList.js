@@ -16,28 +16,28 @@ const ProjectsList = () => {
                 {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                     return (
                         <div className="container">
-                            <li className={"projectListStyles.li"} key={project.node.fields.slug}>
-                                <Link to={`/projects/${project.node.fields.slug}`} key={project.node.id}>
+                            <Link to={`/projects/${project.node.fields.slug}`} key={project.node.id}>
+                                <li className={"projectListStyles.li"} key={project.node.fields.slug}>
                                     <h2>{project.node.frontmatter.title}</h2>
-                                </Link>
-                                <div className={"projectListStyles.list__hero"}>
-                                    <Img
-                                        fluid={
-                                            project.node.frontmatter.hero_image.childImageSharp.fluid
-                                        }
-                                        alt={project.node.frontmatter.title}
-                                    />
-                                </div>
-                                <div className={"projectListStyles.list__info"}>
-                                    <h4>{project.node.frontmatter.date}</h4>
-                                    <p>{project.node.excerpt}</p>
-                                </div>
-                            </li>
+                                    <div className={"projectListStyles.list__hero"}>
+                                        <Img
+                                            fluid={
+                                                project.node.frontmatter.hero_image.childImageSharp.fluid
+                                            }
+                                            alt={project.node.frontmatter.title}
+                                        />
+                                    </div>
+                                    <div className={"projectListStyles.list__info"}>
+                                        <h4>{project.node.frontmatter.date}</h4>
+                                        <p>{project.node.excerpt}</p>
+                                    </div>
+                                </li>
+                            </Link>
                         </div>
                     )
                 } )
                 }
-            </div >
+            </div>
         )
     }
     return (
@@ -55,7 +55,6 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
         return `content/projects/${slug}.md`
     },
     fields: [
-        // Commented out until we find a solution for previewSrc
         {
             name: "hero",
             description: "Pick a good one",
@@ -103,7 +102,9 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
             date: new Date(),
             // description: projectInfo.description,
             //choosing a default image so we don't get an error
-            hero_image: projectInfo.hero ? projectInfo.hero : '/content/images/ren-ran-bBiuSdck8tU-unsplash.jpg'
+            hero_image: projectInfo.hero ? projectInfo.hero : '/content/images/ren-ran-bBiuSdck8tU-unsplash.jpg',
+            author: projectInfo.author ? projectInfo.author : 'Kurt Vonnegut'
+
         } )
     },
     body: () => `New post, who dis?`

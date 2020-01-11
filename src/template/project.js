@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { graphql, Link } from "gatsby"
 import useProjectData from '../hooks/useProjectData'
-import { remarkForm } from 'gatsby-tinacms-remark'
+import { remarkForm, DeleteAction } from 'gatsby-tinacms-remark'
 import Layout from '../components/layout'
 
 function Project( props ) {
@@ -38,7 +38,7 @@ function Project( props ) {
                     </div>
                     <div className="footer">
                         <h4>{data.frontmatter.author}</h4>
-                        <Link to={`projects/${nextSlug}`} className={"blogTemplateStyles.footer__next"}></Link>
+                        <Link to={`projects/${nextSlug}`} className={"projectTemplateStyles.footer__next"}></Link>
                     </div>
                 </article>
             </div>
@@ -47,6 +47,7 @@ function Project( props ) {
 }
 
 const ProjectTemplateOptions = {
+    actions: [DeleteAction],
     fields: [
         {
             label: "Project Title",
@@ -71,12 +72,12 @@ const ProjectTemplateOptions = {
                 return markdownRemark.frontmatter.hero_image.childImageSharp.fluid.src
             },
         },
-        {
-            label: "Description",
-            name: "frontmatter.description",
-            description: "Enter the project description",
-            component: "textarea",
-        },
+        // {
+        //     label: "Description",
+        //     name: "rawFrontmatter.description",
+        //     description: "Enter the project description",
+        //     component: "textarea",
+        // },
         {
             label: "Author",
             name: 'rawFrontmatter.author',
