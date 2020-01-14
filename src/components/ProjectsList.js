@@ -83,12 +83,6 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
             component: 'date',
             description: 'The default will be today'
         },
-        // {
-        //     label: "Description",
-        //     name: "frontmatter.description",
-        //     description: "Enter the project description",
-        //     component: "textarea",
-        // },
         {
             label: 'Author',
             description: 'Who wrote this, yo?',

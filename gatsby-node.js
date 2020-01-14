@@ -8,6 +8,7 @@
 
 const path = require( "path" )
 
+
 module.exports.onCreateNode = ( { node, actions } ) => {
   // Transform the new node here and create a new node or
   // create a new node field.
@@ -30,18 +31,19 @@ module.exports.createPages = async ( { graphql, actions } ) => {
   const projectTemplate = path.resolve( "./src/template/project.js" )
   //get slugs
   const response = await graphql( `
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
+query  {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}, sort: {order: DESC, fields: timeToRead}) {
+    edges {
+      node {
+        fields {
+          slug
         }
       }
     }
+  }
+}
   `)
+
   //create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach( edge => {
     createPage( {
@@ -53,3 +55,12 @@ module.exports.createPages = async ( { graphql, actions } ) => {
     } )
   } )
 }
+
+// Allow me to use something like: import { X } from 'directory' instead of '../../folder/directory'
+// exports.onCreateWebpackConfig = ( { stage, actions } ) => {
+//   actions.setWebpackConfig( {
+//     resolve: {
+//       modules: [path.resolve( __dirname, 'src' ), 'node_modules'],
+//     },
+//   } )
+// }

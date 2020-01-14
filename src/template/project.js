@@ -72,12 +72,6 @@ const ProjectTemplateOptions = {
                 return markdownRemark.frontmatter.hero_image.childImageSharp.fluid.src
             },
         },
-        // {
-        //     label: "Description",
-        //     name: "rawFrontmatter.description",
-        //     description: "Enter the project description",
-        //     component: "textarea",
-        // },
         {
             label: "Author",
             name: 'rawFrontmatter.author',

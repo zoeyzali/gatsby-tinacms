@@ -15,6 +15,7 @@
     "gatsby-remark-images": "^3.1.41",
     "gatsby-remark-normalize-paths": "^1.0.0",
     "gatsby-remark-relative-images": "^0.2.3",
+    "gatsby-source-contentful": "^2.1.76",
     "gatsby-source-filesystem": "^2.1.45",
     "gatsby-tinacms-git": "^0.2.15",
     "gatsby-tinacms-json": "^0.8.1",

@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 export default function useProjectData() {
     const data = useStaticQuery( graphql`
 query getProjectData{
-    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }){
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }, filter: {fileAbsolutePath: {regex: "/projects/"}}){
         edges{
             node{
                 id
