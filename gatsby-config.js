@@ -6,13 +6,21 @@ const theme = require( "./content/settings/theme.json" )
 module.exports = {
   siteMetadata: {
     title: `Artist Portfolio`,
-    description: `Template Artist Portfolio.`,
+    description: `Artist Portfolio Website.`,
     author: `@zoeyzali`,
   },
   plugins: [
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-json",
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        purgeOnly: [`src/css/style.css`]
+      }
+    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -98,8 +106,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Portfolio`,
-        short_name: `Port`,
+        name: `Artist Portfolio`,
+        short_name: `Portfolio`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,

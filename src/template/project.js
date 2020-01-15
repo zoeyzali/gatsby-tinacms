@@ -24,24 +24,25 @@ function Project( props ) {
 
     return (
         <Layout>
-            <div className="container project-page">
-                <article>
-                    <figure>
-                        <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} />
-                    </figure>
-                    <div className="project-info">
-                        <h1>{data.frontmatter.title}</h1>
-                        <h3>{data.frontmatter.date}</h3>
+            <article className="max-w-md mx-auto bg-white border rounded-lg overflow-hidden">
+                <figure>
+                    <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} />
+                </figure>
+                <div className="p-2">
+                    <div className="text-gray-600">
+                        <h1 className="font-semibold text-3xl leading-tight uppercase truncate">{data.frontmatter.title}</h1>
+                        <span className="text-sm tracking-wider">          {data.frontmatter.date}
+                        </span>
                     </div>
-                    <div className="project-body" dangerouslySetInnerHTML={{ __html: data.html }}>
-                        {data.frontmatter.description}
-                    </div>
-                    <div className="footer">
-                        <h4>{data.frontmatter.author}</h4>
-                        <Link to={`projects/${nextSlug}`} className={"projectTemplateStyles.footer__next"}></Link>
-                    </div>
-                </article>
-            </div>
+                </div>
+                <div className="text-gray-600 text-md font-lighter px-2 text-capitalize tracking-wide" dangerouslySetInnerHTML={{ __html: data.html }}>
+                    {data.frontmatter.description}
+                </div>
+                <div className="my-4 px-2">
+                    {data.frontmatter.author}
+                    <Link to={`projects/${nextSlug}`} className={"projectTemplateStyles.footer__next"}></Link>
+                </div>
+            </article>
         </Layout>
     )
 }
@@ -87,7 +88,6 @@ const ProjectTemplateOptions = {
 }
 
 export default remarkForm( Project, ProjectTemplateOptions )
-
 
 export const getProjectData = graphql`
 query($slug: String!){

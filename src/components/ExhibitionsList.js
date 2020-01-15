@@ -22,6 +22,7 @@ const getExhibitionsData = graphql`
           lat
           lon
         }
+        place
       }
     }
   }
@@ -31,11 +32,11 @@ const ExhibitionsList = () => {
   return (
     <StaticQuery query={getExhibitionsData} render={data => {
       return (
-        <section className="container">
+        <div className="flex min-h-screen p-2  justify-center">
           {data.allExhibitions.edges.map( ( { node: exhibition } ) => {
             return <Exhibition key={exhibition.id} exhibition={exhibition} />
           } )}
-        </section>
+        </div>
       )
     }}
     />

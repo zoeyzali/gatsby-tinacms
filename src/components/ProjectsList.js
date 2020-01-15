@@ -9,17 +9,16 @@ import useProjectData from '../hooks/useProjectData'
 
 const ProjectsList = () => {
     const projectData = useProjectData()
-
     function renderProjectData() {
         return (
-            <div>
+            <div className="container max-w-sm rounded">
                 {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                     return (
-                        <div className="container">
+                        <div className="px-4 mt-2 border mx-auto bg-white">
                             <Link to={`/projects/${project.node.fields.slug}`} key={project.node.id}>
-                                <li className={"projectListStyles.li"} key={project.node.fields.slug}>
-                                    <h2>{project.node.frontmatter.title}</h2>
-                                    <div className={"projectListStyles.list__hero"}>
+                                <li className="p-2" key={project.node.fields.slug}>
+                                    <h2 className="font-semibold text-4xl leading-tighter text-gray-800 truncate">{project.node.frontmatter.title}</h2>
+                                    <div className="mt-2">
                                         <Img
                                             fluid={
                                                 project.node.frontmatter.hero_image.childImageSharp.fluid
@@ -27,7 +26,7 @@ const ProjectsList = () => {
                                             alt={project.node.frontmatter.title}
                                         />
                                     </div>
-                                    <div className={"projectListStyles.list__info"}>
+                                    <div className="text-md text-gray-800">
                                         <h4>{project.node.frontmatter.date}</h4>
                                         <p>{project.node.excerpt}</p>
                                     </div>
@@ -41,9 +40,7 @@ const ProjectsList = () => {
         )
     }
     return (
-        <section>
-            <ul className="projects-list">{renderProjectData()}</ul>
-        </section>
+        <ul className="flex project-page">{renderProjectData()}</ul>
     )
 }
 
@@ -94,10 +91,9 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
         return ( {
             title: projectInfo.title,
             date: new Date(),
-            // description: projectInfo.description,
             //choosing a default image so we don't get an error
             hero_image: projectInfo.hero ? projectInfo.hero : '/content/images/ren-ran-bBiuSdck8tU-unsplash.jpg',
-            author: projectInfo.author ? projectInfo.author : 'Kurt Vonnegut'
+            author: projectInfo.author ? projectInfo.author : 'Zoe Ali'
 
         } )
     },

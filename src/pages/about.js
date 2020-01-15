@@ -13,7 +13,7 @@ const getArtistBio = graphql`
           bio
         }
         portrait {
-          fixed(width: 200, height: 200) {
+          fixed(width: 350, height: 350) {
               ...GatsbyContentfulFixed_tracedSVG
         }
         }
@@ -26,26 +26,30 @@ const getArtistBio = graphql`
 const AboutPage = () => {
     return (
         <StaticQuery query={getArtistBio} render={data => {
-            console.log( data.artistBio.edges, 'query data' )
             return (
-                <section className="about-page">
-                    <div className="container">
-                        <div className="row" style={{ marginTop: "5rem", textAlign: "center" }}>
-                            <h1>Bio</h1>
-                            {data.artistBio.edges.map( ( { node: artist } ) => {
-                                return (
-                                    <div key={artist.id}>
-                                        <h3>{artist.name}</h3>
-                                        <div>
-                                            <Img fixed={artist.portrait.fixed} alt={artist.name} />
+                <>
+                    <div className="container max-w-sm mx-auto flex p-5">
+                        {data.artistBio.edges.map( ( { node: artist } ) => {
+                            return (
+                                <div key={artist.id} className="max-w-sm rounded overflow-hidden shadow-lg">
+                                    <Img className="w-full" fixed={artist.portrait.fixed} alt={artist.name} />
+                                    <div className="px-6 py-4">
+                                        <div className="font-light text-4xl mb-3">
+                                            {artist.name}
+                                            <p className="text-gray-600 text-base mt-2 text-justify">
+                                                {artist.bio.bio}
+                                            </p>
                                         </div>
-                                        <p>{artist.bio.bio}</p>
+                                        <div className="px-6 py-4">
+                                            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#ArtistStudio</span>
+                                            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#Bio</span>
+                                        </div>
                                     </div>
-                                )
-                            } )}
-                        </div>
+                                </div>
+                            )
+                        } )}
                     </div>
-                </section>
+                </>
             )
         }}
         />

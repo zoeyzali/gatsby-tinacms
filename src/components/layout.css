@@ -16,7 +16,6 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
-  /* color: #000; */
 }
 
 a:active,
@@ -31,7 +30,11 @@ li {
 
 .header {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+}
+
+a.brand {
+  float: left !important;
 }
 
 .project-page,
