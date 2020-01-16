@@ -10,11 +10,13 @@ module.exports = {
         blue: {
           ...colors.blue,
           '800': '#0b32f8'
-        }
-      }
+        },
+      },
     }
   },
-  variants: {},
+  variants: {
+    margin: ['responsive', 'hover']
+  },
   plugins: []
 }
 

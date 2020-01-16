@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = () => (
-    <header className="flex justify-center bg-white"
+    <header className="flex justify-between bg-white"
     >
         <div className="header w-full"
             style={{
@@ -20,7 +20,7 @@ const Header = () => (
                     fontWeight: `300`,
                     fontFamily: `Montserrat, sans-serif`,
                 }}
-                className="float-left mr-20 h-32 brand">
+                className="float-left mr-15 h-32 brand">
                 COCO.
             </Link>
             <Link
@@ -30,9 +30,8 @@ const Header = () => (
                     textDecoration: `none`,
                     fontWeight: `300`,
                     fontFamily: `Montserrat, sans-serif`,
-                    marginInlineEnd: `1rem`
                 }}
-            >
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl justify-between">
                 work
         </Link>
             <Link
@@ -42,9 +41,8 @@ const Header = () => (
                     textDecoration: `none`,
                     fontWeight: `300`,
                     fontFamily: `Montserrat, sans-serif`,
-                    marginInlineEnd: `1rem`
                 }}
-            >
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl justify-between">
                 about
         </Link>
             <Link
@@ -54,9 +52,8 @@ const Header = () => (
                     textDecoration: `none`,
                     fontWeight: `300`,
                     fontFamily: `Montserrat, sans-serif`,
-                    marginInlineEnd: `1rem`
                 }}
-            >
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
                 contact
         </Link>
         </div>

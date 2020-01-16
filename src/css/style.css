@@ -3,4 +3,16 @@
 /* purgecss end ignore */
 @tailwind components;
 
+.section {
+    @apply w-full p-6;
+}
+
+.section-title {
+    @apply w-48 mx-auto pt-6 border-b-2 border-orange-500 text-center text-2xl text-blue-700;
+}
+
+.section-subtitle {
+    @apply p-2 text-center text-lg text-gray-700;
+}
+
 @tailwind utilities;

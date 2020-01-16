@@ -4,11 +4,11 @@ import Layout from '../components/layout'
 const contact = () => {
     return (
         <Layout>
-            <div className="container antialiased mt-3">
-                <div className="bg-pink-200 min-h-screen p-8 flex items-center justify-center">
-                    <div className="text-3xl text-gray-700 tracking-wider">
-                        contact info: zoeecoding@gmail.com
-                </div>
+            <div className="section bg-blue-800 antialiased">
+                <div className="min-h-screen p-8 flex items-center justify-center">
+                    <div className="text-2xl text-white tracking-wider">
+                        <p>contact: > zoeecoding@gmail.com</p>
+                    </div>
                 </div>
             </div>
         </Layout>

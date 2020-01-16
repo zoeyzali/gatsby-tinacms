@@ -16,6 +16,7 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
+  margin-right: 1rem;
 }
 
 a:active,
@@ -30,7 +31,7 @@ li {
 
 .header {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 a.brand {
@@ -444,5 +445,9 @@ td:last-child {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+
+  a {
+    margin-right: 0.5rem;
   }
 }
