@@ -2,10 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ( { siteTitle } ) => (
-    <header className="flex justify-center mb-10 bg-white"
+const Header = () => (
+    <header className="flex justify-center bg-white"
     >
-        <div className="header"
+        <div className="header w-full"
             style={{
                 margin: `0 auto`,
                 maxWidth: 960,
@@ -21,7 +21,7 @@ const Header = ( { siteTitle } ) => (
                     fontFamily: `Montserrat, sans-serif`,
                 }}
                 className="float-left mr-20 h-32 brand">
-                Coco.
+                COCO.
             </Link>
             <Link
                 to="/projects"
@@ -33,19 +33,7 @@ const Header = ( { siteTitle } ) => (
                     marginInlineEnd: `1rem`
                 }}
             >
-                Projects
-        </Link>
-            <Link
-                to="/contact"
-                style={{
-                    color: `#000`,
-                    textDecoration: `none`,
-                    fontWeight: `300`,
-                    fontFamily: `Montserrat, sans-serif`,
-                    marginInlineEnd: `1rem`
-                }}
-            >
-                Contacts
+                work
         </Link>
             <Link
                 to="/about"
@@ -57,7 +45,19 @@ const Header = ( { siteTitle } ) => (
                     marginInlineEnd: `1rem`
                 }}
             >
-                Bio
+                about
+        </Link>
+            <Link
+                to="/contact"
+                style={{
+                    color: `#000`,
+                    textDecoration: `none`,
+                    fontWeight: `300`,
+                    fontFamily: `Montserrat, sans-serif`,
+                    marginInlineEnd: `1rem`
+                }}
+            >
+                contact
         </Link>
         </div>
     </header>

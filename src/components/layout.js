@@ -23,19 +23,11 @@ const Layout = ( { children } ) => {
           height: "100%"
         }}>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div className="">
+        <div className="relative">
 
           <main className="">{children}</main>
 
-          <footer style={{
-            position: "fixed",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: "3rem"
-          }}>
+          <footer className="absolute inset-x-0 bottom-0 text-center mt-4 bg-gray-100 py-4 tracking-widest">
             © {new Date().getFullYear()}, Built by
           {` `}
             <a href="https://www.zoeali.se">zoeecoding</a>
