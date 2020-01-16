@@ -24,13 +24,13 @@ function Project( props ) {
 
     return (
         <Layout>
-            <article className="max-w-md mx-auto bg-white border rounded-lg overflow-hidden">
+            <article className="max-w-md mx-auto bg-white border rounded-lg overflow-hidden mb-10">
                 <figure>
                     <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} />
                 </figure>
                 <div className="p-2">
                     <div className="text-gray-600">
-                        <h1 className="font-semibold text-3xl leading-tight uppercase truncate">{data.frontmatter.title}</h1>
+                        <h1 className="font-lighter text-3xl leading-1 uppercase truncate">{data.frontmatter.title}</h1>
                         <span className="text-sm tracking-wider">          {data.frontmatter.date}
                         </span>
                     </div>
@@ -38,7 +38,7 @@ function Project( props ) {
                 <div className="text-gray-600 text-md font-lighter px-2 text-capitalize tracking-wide" dangerouslySetInnerHTML={{ __html: data.html }}>
                     {data.frontmatter.description}
                 </div>
-                <div className="my-4 px-2">
+                <div className="mb-6 px-2">
                     {data.frontmatter.author}
                     <Link to={`projects/${nextSlug}`} className={"projectTemplateStyles.footer__next"}></Link>
                 </div>
@@ -83,7 +83,6 @@ const ProjectTemplateOptions = {
             name: 'rawMarkdownBody',
             component: "markdown"
         },
-
     ]
 }
 

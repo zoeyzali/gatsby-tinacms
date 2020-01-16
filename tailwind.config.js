@@ -9,9 +9,17 @@ module.exports = {
       colors: {
         blue: {
           ...colors.blue,
-          '800': '#0b32f8'
+          "800": "#0b32f8"
         },
-      },
+        yellow: {
+          ...colors.yellow,
+          "800": "#fbff48"
+        },
+        pink: {
+          ...colors.pink,
+          "800": "#f22196"
+        }
+      }
     }
   },
   variants: {

@@ -5,54 +5,24 @@ import React from "react"
 const Header = () => (
     <header className="flex justify-between bg-white"
     >
-        <div className="header w-full"
-            style={{
-                margin: `0 auto`,
-                maxWidth: 960,
-                padding: `1.45rem 1.0875rem`,
-            }}
-        >
+        <div className="header w-full py-6 px-2">
             <Link
                 to="/"
-                style={{
-                    color: `#000`,
-                    textDecoration: `none`,
-                    fontWeight: `300`,
-                    fontFamily: `Montserrat, sans-serif`,
-                }}
-                className="float-left mr-15 h-32 brand">
+                className="float-left mr-15 h-10 brand text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
                 COCO.
             </Link>
             <Link
                 to="/projects"
-                style={{
-                    color: `#000`,
-                    textDecoration: `none`,
-                    fontWeight: `300`,
-                    fontFamily: `Montserrat, sans-serif`,
-                }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl justify-between">
                 work
         </Link>
             <Link
                 to="/about"
-                style={{
-                    color: `#000`,
-                    textDecoration: `none`,
-                    fontWeight: `300`,
-                    fontFamily: `Montserrat, sans-serif`,
-                }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl justify-between">
                 about
         </Link>
             <Link
                 to="/contact"
-                style={{
-                    color: `#000`,
-                    textDecoration: `none`,
-                    fontWeight: `300`,
-                    fontFamily: `Montserrat, sans-serif`,
-                }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
                 contact
         </Link>

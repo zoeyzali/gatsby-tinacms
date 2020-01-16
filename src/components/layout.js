@@ -17,18 +17,14 @@ const Layout = ( { children } ) => {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen"
-        style={{
-          backgroundColor: "#fbff48",
-          height: "100%"
-        }}>
+      <div className="flex flex-col min-h-screen">
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="relative">
 
-          <main className="">{children}</main>
+          <main className="p-2">{children}</main>
 
           <footer className="absolute inset-x-0 bottom-0 text-center mt-4 bg-gray-100 py-4 tracking-widest">
-            © {new Date().getFullYear()}, Built by
+            © {new Date().getFullYear()} Built by
           {` `}
             <a href="https://www.zoeali.se">zoeecoding</a>
           </footer>

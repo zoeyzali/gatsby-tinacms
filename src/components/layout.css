@@ -45,7 +45,9 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+footer,
+a {
   font-family: 'Montserrat', sans-serif !important;
 }
 
