@@ -13,17 +13,17 @@ const Header = () => (
             </Link>
             <Link
                 to="/projects"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between  bg-yellow-800">
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between  bg-yellow-800 tracking-widest">
                 work
         </Link>
             <Link
                 to="/about"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between  bg-yellow-800">
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between  bg-yellow-800 tracking-widest">
                 about
         </Link>
             <Link
                 to="/contact"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800">
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-widest">
                 contact
         </Link>
         </div>

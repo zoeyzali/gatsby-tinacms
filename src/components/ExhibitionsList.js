@@ -14,7 +14,7 @@ const getExhibitionsData = graphql`
         }
         eventDate(formatString: "MMMM DD, YYYY")
         images {
-          fluid(maxHeight: 400) {
+          fluid(maxHeight: 350) {
             ...GatsbyContentfulFluid_tracedSVG
           }
         }

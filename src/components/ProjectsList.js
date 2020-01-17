@@ -11,13 +11,13 @@ const ProjectsList = () => {
     const projectData = useProjectData()
     function renderProjectData() {
         return (
-            <div className="max-w-md min-h-screen rounded shadow-xl overflow-hidden">
+            <div className="max-w-md min-h-screen shadow-xl overflow-hidden">
                 {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                     return (
-                        <div className="px-4 mt-2 border mx-auto bg-white">
+                        <div className="rounded-lg border bg-white px-3 mx-auto">
                             <Link to={`/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.id}>
                                 <li key={project.node.fields.slug}>
-                                    <h2 className="font-semibold text-4xl leading-wider text-gray-700 truncate mt-4">{project.node.frontmatter.title}</h2>
+                                    <h2 className="font-semibold text-4xl tracking-wider text-gray-700 truncate mt-2">{project.node.frontmatter.title}</h2>
                                     <div className="w-full">
                                         <Img
                                             fluid={
@@ -29,7 +29,7 @@ const ProjectsList = () => {
                                     <div className="font-semibold text-sm text-gray-700">
                                         <span>{project.node.frontmatter.date}
                                         </span>
-                                        <p className="mt-3 font-light">{project.node.excerpt}</p>
+                                        <p className="font-light mt-2">{project.node.excerpt}</p>
                                     </div>
                                 </li>
                             </Link>
