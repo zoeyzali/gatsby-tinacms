@@ -1,7 +1,4 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<h1 align="center">
-  Gatsby's default starter
-</h1>
 
 1.  **Start developing.**
 
