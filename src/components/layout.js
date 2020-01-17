@@ -16,21 +16,19 @@ const Layout = ( { children } ) => {
   `)
 
   return (
-    <>
-      <div className="flex flex-col min-h-screen">
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div className="relative">
 
-          <main className="p-2">{children}</main>
+    <div className="flex flex-col min-h-screen">
+      <Header siteTitle={data.site.siteMetadata.title} />
+      <div className="">
+        <main className="relative">{children}</main>
 
-          <footer className="absolute inset-x-0 bottom-0 text-center mt-4 bg-gray-100 py-4 tracking-widest">
-            © {new Date().getFullYear()} Built by
+        <footer className="absolute inset-x-0 text-center bg-gray-100 py-5 mt-4 tracking-widest">
+          © {new Date().getFullYear()} Built by
           {` `}
-            <a href="https://www.zoeali.se">zoeecoding</a>
-          </footer>
-        </div>
+          <a href="https://www.zoeali.se">zoeecoding</a>
+        </footer>
       </div>
-    </>
+    </div>
   )
 }
 

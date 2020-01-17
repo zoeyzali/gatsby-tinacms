@@ -4,7 +4,7 @@ import Exhibition from './Exhibition'
 
 const getExhibitionsData = graphql`
 {
-  allExhibitions: allContentfulExhibitions {
+  allExhibitions: allContentfulExhibitions (sort: {fields: eventDate, order: DESC}){
     edges {
       node {
         id

@@ -7,7 +7,6 @@ html {
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-family: 'Montserrat',
     sans-serif;
 }
@@ -50,6 +49,7 @@ footer,
 a {
   font-family: 'Montserrat', sans-serif !important;
 }
+
 
 article,
 aside,
@@ -215,8 +215,7 @@ html {
 
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
-  font-weight: normal;
+  /* font-family: georgia, serif; */
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";

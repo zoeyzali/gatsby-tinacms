@@ -5,25 +5,25 @@ import React from "react"
 const Header = () => (
     <header className="flex justify-between bg-white"
     >
-        <div className="header w-full py-6 px-2">
+        <div className="header w-full py-6 px-4">
             <Link
                 to="/"
-                className="float-left mr-15 h-10 brand text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                className="float-left h-10 brand text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
                 COCO.
             </Link>
             <Link
                 to="/projects"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl justify-between">
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between  bg-yellow-800">
                 work
         </Link>
             <Link
                 to="/about"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl justify-between">
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between  bg-yellow-800">
                 about
         </Link>
             <Link
                 to="/contact"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800">
                 contact
         </Link>
         </div>

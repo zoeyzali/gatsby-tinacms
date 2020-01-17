@@ -13,7 +13,8 @@ module.exports = {
         },
         yellow: {
           ...colors.yellow,
-          "800": "#fbff48"
+          "800": "#fbff48",
+          "900": "#f4c20b"
         },
         pink: {
           ...colors.pink,

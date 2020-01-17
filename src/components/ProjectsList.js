@@ -11,14 +11,14 @@ const ProjectsList = () => {
     const projectData = useProjectData()
     function renderProjectData() {
         return (
-            <div className="container max-w-sm rounded">
+            <div className="max-w-md min-h-screen rounded shadow-xl overflow-hidden">
                 {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                     return (
                         <div className="px-4 mt-2 border mx-auto bg-white">
-                            <Link to={`/projects/${project.node.fields.slug}`} key={project.node.id}>
-                                <li className="p-2" key={project.node.fields.slug}>
-                                    <h2 className="font-semibold text-4xl leading-tighter text-gray-800 truncate">{project.node.frontmatter.title}</h2>
-                                    <div className="mt-2">
+                            <Link to={`/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.id}>
+                                <li key={project.node.fields.slug}>
+                                    <h2 className="font-semibold text-4xl leading-wider text-gray-700 truncate mt-4">{project.node.frontmatter.title}</h2>
+                                    <div className="w-full">
                                         <Img
                                             fluid={
                                                 project.node.frontmatter.hero_image.childImageSharp.fluid
@@ -26,9 +26,10 @@ const ProjectsList = () => {
                                             alt={project.node.frontmatter.title}
                                         />
                                     </div>
-                                    <div className="text-md text-gray-800">
-                                        <h4>{project.node.frontmatter.date}</h4>
-                                        <p>{project.node.excerpt}</p>
+                                    <div className="font-semibold text-sm text-gray-700">
+                                        <span>{project.node.frontmatter.date}
+                                        </span>
+                                        <p className="mt-3 font-light">{project.node.excerpt}</p>
                                     </div>
                                 </li>
                             </Link>
@@ -40,7 +41,8 @@ const ProjectsList = () => {
         )
     }
     return (
-        <ul className="flex project-page">{renderProjectData()}</ul>
+        <ul className="flex justify-center flex-wrap project-page">{renderProjectData()}
+        </ul>
     )
 }
 
@@ -66,7 +68,7 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
             // Todo: Fix the preview source
             previewSrc: ( postInfo ) => {
                 return postInfo.hero
-            },
+            }
         },
         {
             label: 'Title',
@@ -92,8 +94,8 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
             title: projectInfo.title,
             date: new Date(),
             //choosing a default image so we don't get an error
-            hero_image: projectInfo.hero ? projectInfo.hero : '/content/images/ren-ran-bBiuSdck8tU-unsplash.jpg',
-            author: projectInfo.author ? projectInfo.author : 'Zoe Ali'
+            hero_image: projectInfo.hero ? projectInfo.hero : '/content/images/murphys-law.png',
+            author: projectInfo.author ? projectInfo.author : 'COCO.'
 
         } )
     },
