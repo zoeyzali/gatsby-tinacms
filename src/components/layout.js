@@ -16,16 +16,15 @@ const Layout = ( { children } ) => {
   `)
 
   return (
-
     <div className="flex flex-col min-h-screen">
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="">
         <main className="relative">{children}</main>
 
-        <footer className="absolute inset-x-0 text-center bg-gray-100 py-5 mt-4 tracking-widest">
-          © {new Date().getFullYear()} Built by
+        <footer className="absolute inset-x-0 text-center bg-gray-100 py-8 mt-4 tracking-wider text-sm">
+          ©{new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.zoeali.se">zoeecoding</a>
+          <a href="https://www.zoeali.se">zoeecoding@gmail.com</a>
         </footer>
       </div>
     </div>

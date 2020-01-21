@@ -28,7 +28,7 @@ const getArtistBio = graphql`
 const AboutPage = () => {
     return (
         <Layout>
-            <h1 className="tracking-widest font-light mt-8 py-5 text-center">art &  illustrations enthusiast</h1>
+            <h1 className="tracking-widest font-light mt-8 py-5 text-center">art & illustrations enthusiast</h1>
             <StaticQuery query={getArtistBio} render={data => {
                 return (
                     <div className="max-w-lg mx-auto flex">
