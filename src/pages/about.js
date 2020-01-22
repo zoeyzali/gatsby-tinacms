@@ -28,13 +28,14 @@ const getArtistBio = graphql`
 const AboutPage = () => {
     return (
         <Layout>
-            <h1 className="tracking-widest font-light mt-8 py-5 text-center">art & illustrations enthusiast</h1>
+            <h1 className="tracking-wider font-light mt-8 py-5 text-center">art & illustrations enthusiast</h1>
             <StaticQuery query={getArtistBio} render={data => {
                 return (
                     <div className="max-w-lg mx-auto flex">
                         {data.artistBio.edges.map( ( { node: artist } ) => {
                             return (
-                                <div key={artist.id} className="bg-white rounded overflow-hidden shadow-xl">
+                                <div key={artist.id}
+                                    className="bg-white rounded overflow-hidden shadow-xl">
                                     <Img className="h-100 w-full object-fit object-center" fluid={artist.portrait.fluid} alt={artist.name} />
                                     <div className="px-5 py-4">
                                         <div className="font-light text-5xl">

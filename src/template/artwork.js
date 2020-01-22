@@ -9,7 +9,7 @@
 // //     return (
 // //         <Layout>
 // //             <SEO title={title} />
-// //             <div className="blogpost">
+// //             <div className="casestudy">
 // //                 <h1>{artwork.title}</h1>
 // //                 <p className="body-text">{artwork.description.description}</p>
 // //                 <Link to="/projects">View more projects</Link>

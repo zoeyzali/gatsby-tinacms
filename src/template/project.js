@@ -89,16 +89,16 @@ export default remarkForm( Project, ProjectTemplateOptions )
 
 export const getProjectData = graphql`
 query($slug: String!){
-                markdownRemark( fields: {slug: {eq: $slug}}){
-                id
+    markdownRemark( fields: {slug: {eq: $slug}}){
+        id
         fileRelativePath
-            rawFrontmatter
-            rawMarkdownBody
+        rawFrontmatter
+        rawMarkdownBody
         fields{
                 slug
             }
             frontmatter{
-                title
+            title
             author
             date(formatString: "MMMM Do, YYYY")
             hero_image{

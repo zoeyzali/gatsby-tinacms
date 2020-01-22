@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { withPlugin } from 'tinacms'
 import { RemarkCreatorPlugin } from 'gatsby-tinacms-remark'
@@ -14,8 +13,8 @@ const ProjectsList = () => {
             <div className="max-w-md min-h-screen shadow-xl overflow-hidden">
                 {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                     return (
-                        <div className="rounded-lg border bg-white px-3 mx-auto">
-                            <Link to={`/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.id}>
+                        <div className="rounded-lg border bg-white px-3 mx-auto" key={project.node.id}>
+                            <a href={`/projects/${project.node.fields.slug}`} rel="noopener" >
                                 <li key={project.node.fields.slug}>
                                     <h2 className="font-semibold text-4xl tracking-wider text-gray-700 truncate mt-2">{project.node.frontmatter.title}</h2>
                                     <div className="w-full">
@@ -32,7 +31,7 @@ const ProjectsList = () => {
                                         <p className="font-light mt-2">{project.node.excerpt}</p>
                                     </div>
                                 </li>
-                            </Link>
+                            </a>
                         </div>
                     )
                 } )
@@ -41,7 +40,7 @@ const ProjectsList = () => {
         )
     }
     return (
-        <ul className="flex justify-center flex-wrap project-page">{renderProjectData()}
+        <ul className="flex justify-center flex-wrap mx-auto project-page">{renderProjectData()}
         </ul>
     )
 }

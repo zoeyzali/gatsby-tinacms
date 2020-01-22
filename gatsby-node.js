@@ -42,7 +42,7 @@ query  {
     }
   }
 }
-  `)
+`)
 
   //create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach( edge => {
