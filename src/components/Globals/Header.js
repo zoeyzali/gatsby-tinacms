@@ -37,7 +37,7 @@ const Header = () => {
                         event.preventDefault()
                         logout( () => navigate( "/app/login" ) )
                     }}>
-                        <span className="text-xs hover:bg-yellow-800">Logout</span>
+                        <span className="text-xs hover:bg-yellow-800">signout</span>
                     </a>
                 ) : null}
             </div>

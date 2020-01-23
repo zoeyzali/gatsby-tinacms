@@ -17,7 +17,7 @@ const CaseStudy = () => {
                         <div className="flex flex-wrap text-gray-800"
                             key={singleCase.id}>
 
-                            <div className="w-full xl:w-3/4 lg:w-11/12 flex">
+                            <div className="w-full xl:w-3/4 lg:w-11/12 mx-auto flex">
                                 <div className="w-full lg:w-1/2 bg-white rounded-lg lg:rounded-l-none px-2 text-left">
                                     <h3 className="font-semibold text-lg sm:text-sm md: text-lg lg:text-xl xl:text-3xl mt-2">
                                         {singleCase.title}
@@ -51,9 +51,8 @@ const CaseStudy = () => {
                                 </div>
                             </div>
 
-
                             <hr class="mb-8 border-t shadow-md" />
-                            <div className="px-2 text-left text-sm">
+                            <div className="px-2 xl:px-16 text-left text-sm">
                                 <p className="leading-tight">{singleCase.description.description}
                                 </p>
                             </div>

@@ -8,11 +8,11 @@ import { isLoggedIn, getUser } from "../components/AuthUtils/Auth"
 const ProjectsPage = () => (
     <Layout>
         <SEO title="Projects" />
-        <div className="w-100 antialiased text-center mb-4 mt-6 pt-2 pb-6">
-            <h3 className="text-center font-medium">Hello {isLoggedIn() ? getUser().name : "Stranger"}!</h3>
+        <div className="antialiased text-center mb-4 mt-6 pt-2 pb-6">
+            <h3 className="text-center font-medium capitalize">Hello {isLoggedIn() ? getUser().name : "Stranger"}!</h3>
             {isLoggedIn() ? (
                 <span className="text-sm text-center">
-                    You are logged in as Admin! Go to {" "}
+                    You are logged in.. Go to {" "}
                     <Link to="/app/admin" className="text-base sm:text-md md:text-lg lg:text-xl xl:text-2xl bg-yellow-800">
                         Adminspage!
                     </Link>

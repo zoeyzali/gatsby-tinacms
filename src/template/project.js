@@ -1,6 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { remarkForm, DeleteAction } from 'gatsby-tinacms-remark'
 import useProjectData from '../hooks/useProjectData'
 import Layout from '../components/layout'
@@ -27,7 +27,7 @@ function Project( props ) {
     return (
         <Layout>
             <div className="w-full md:w-1/2 mb-6 md:mb-0 bg-white mx-auto border rounded-lg shadow-xl mt-4">
-                <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} className="h-32 object-fit object-center object-cover" />
+                <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} className="h-auto object-fit object-center object-cover" />
                 <div className="text-gray-700 px-2">
                     <h1 className="font-lighter text-4xl capitalize tracking-wide">{data.frontmatter.title}</h1>
                     <span className="text-sm font-semibold">          {data.frontmatter.date}
@@ -41,8 +41,8 @@ function Project( props ) {
                     <div className="font-semibold text-xs">
                         Added by {data.frontmatter.author}
                     </div>
-                    <Link to={`projects/${nextSlug}`} className="">
-                    </Link>
+                    <a href={`projects/${nextSlug}`} className="">
+                    </a>
                 </div>
             </div>
         </Layout>

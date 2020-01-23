@@ -13,13 +13,13 @@ const ProjectsList = () => {
                 <div className="flex flex-wrap -mx-3 mb-6">
                     {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                         return (
-                            <div className="w-full md:w-1/2 px-3 mb-2 md:mb-0 rounded-lg border bg-white px-3 mx-auto"
+                            <div className="w-full md:w-1/2 px-3 md:mb-0 rounded-lg border bg-white px-4 mx-auto"
                                 key={project.node.id}>
                                 <a href={`/projects/${project.node.fields.slug}`} rel="noopener">
                                     <div key={project.node.fields.slug}>
                                         <h1 className="font-semibold text-2xl tracking-wide text-gray-800 truncate mt-2">{project.node.frontmatter.title}
                                         </h1>
-                                        <div className="pb-2/3">
+                                        <div className="h-auto pb-2/3">
                                             <Img
                                                 fluid={
                                                     project.node.frontmatter.hero_image.childImageSharp.fluid
@@ -52,7 +52,7 @@ const ProjectsList = () => {
         )
     }
     return (
-        <div className="w-full rounded shadow-xl overflow-hidden project-page">
+        <div className="w-full container mx-auto rounded shadow-xl overflow-hidden project-page">
             {renderProjectData()}
         </div>
     )

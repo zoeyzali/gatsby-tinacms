@@ -9,6 +9,7 @@ const NotFoundPage = () => (
       <div className="min-h-screen tracking-widest text-white text-center">
         <h1 className="font-semibold mt-8">NOT FOUND</h1>
         <p>You just hit a route that doesn&#39;t exist... oh, the sadness.</p>
+        <a href="/" className="tex-white font-semibold">Click here to go back.</a>
       </div>
     </div>
   </Layout>
