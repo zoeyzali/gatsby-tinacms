@@ -1,15 +1,17 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { graphql, Link } from "gatsby"
-import useProjectData from '../hooks/useProjectData'
 import { remarkForm, DeleteAction } from 'gatsby-tinacms-remark'
+import useProjectData from '../hooks/useProjectData'
 import Layout from '../components/layout'
 
 function Project( props ) {
     const data = props.data.markdownRemark
     const allProjectData = useProjectData()
-
+    console.log( data, 'from props.data.markdownRemark' )
+    console.log( allProjectData, 'aaaaall project DATA' )
     const nextSlug = getNextSlug( data.fields.slug )
+
     function getNextSlug( slug ) {
         const allSlugs = allProjectData.map( project => {
             return project.node.fields.slug
@@ -24,21 +26,22 @@ function Project( props ) {
 
     return (
         <Layout>
-            <div className="max-w-lg bg-white mx-auto border rounded-lg shadow-xl">
-                <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} />
-                <div className="text-gray-700 px-4">
-                    <h1 className="font-lighter text-4xl uppercase tracking-wider">{data.frontmatter.title}</h1>
+            <div className="w-full md:w-1/2 mb-6 md:mb-0 bg-white mx-auto border rounded-lg shadow-xl mt-4">
+                <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} className="h-32 object-fit object-center object-cover" />
+                <div className="text-gray-700 px-2">
+                    <h1 className="font-lighter text-4xl capitalize tracking-wide">{data.frontmatter.title}</h1>
                     <span className="text-sm font-semibold">          {data.frontmatter.date}
                     </span>
                 </div>
-                <div className="px-4 py-2">
-                    <div className="text-sm font-light text-capitalize tracking-tight" dangerouslySetInnerHTML={{ __html: data.html }}>
+                <div className="p-2">
+                    <div className="text-sm font-light tracking-tight"
+                        dangerouslySetInnerHTML={{ __html: data.html }}>
                         {data.frontmatter.description}
                     </div>
                     <div className="font-semibold text-xs">
                         Added by {data.frontmatter.author}
                     </div>
-                    <Link to={`projects/${nextSlug}`} className={"projectTemplateStyles.footer__next"}>
+                    <Link to={`projects/${nextSlug}`} className="">
                     </Link>
                 </div>
             </div>

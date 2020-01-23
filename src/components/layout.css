@@ -30,7 +30,6 @@ li {
 
 .header {
   text-align: center;
-  font-size: 1.3rem;
 }
 
 a.brand {
@@ -215,7 +214,6 @@ html {
 
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  /* font-family: georgia, serif; */
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";

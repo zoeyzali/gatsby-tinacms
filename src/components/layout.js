@@ -16,12 +16,12 @@ const Layout = ( { children } ) => {
   `)
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="">
-        <main className="relative">{children}</main>
+        <main className="relative min-h-screen">{children}</main>
 
-        <footer className="absolute inset-x-0 text-center bg-gray-100 py-8 mt-4 tracking-wider text-sm">
+        <footer className="absolute inset-x-0 font-medium text-center bg-gray-100 py-8 mt-4 tracking-wide text-sm">
           ©{new Date().getFullYear()}, Built by
           {` `}
           <a href="https://www.zoeali.se">zoeecoding@gmail.com</a>

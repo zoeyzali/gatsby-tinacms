@@ -1,51 +1,65 @@
 import React from 'react'
 import useCaseStudy from '../hooks/useCaseStudy'
-import Img from 'gatsby-image'
 import VisualArtModule from './VideoModule'
+import { Gallery } from './Gallery'
+
 
 const CaseStudy = () => {
     const caseData = useCaseStudy()
 
     return (
-        <div className="antialiased w-full overflow-hidden px-2">
-            <div className="flex flex-wrap">
-                <h1 className="font-medium uppercase text-base sm:text-sm md: text-lg lg:text-xl xl:text-4xl">
-                    <span className="bg-yellow-800 tracking-wider">casest</span>udy</h1>
-            </div>
-            {/* <-------------------------------> */}
-
-            <div className="flex flex-row bg-gray-100">
+        <div className="flex justify-between -mx-3 mb-6 antialiased shadow-lg">
+            <div className="bg-gray-100 px-4 shadow-lg">
+                <h1 className="font-semibold uppercase sm:text-md md:text-lg lg:text-xl xl:text-4xl tracking-wider px-2 mt-2">
+                    <span className="bg-yellow-800 tracking-widest align-middle">case</span>study</h1>
                 {caseData.edges.map( ( { node: singleCase } ) => {
-                    // console.log( singleCase.description.childMarkdownRemark.excerptAst.children, 'excerpts AST?' )
                     return (
-                        <>
-                            <div className="flex-wrap px-4 mt-2"
-                                key={singleCase.id}>
-                                <div className="flex-col">
-                                    <span className="text-xs">{singleCase.event}
+                        <div className="flex flex-wrap text-gray-800"
+                            key={singleCase.id}>
+
+                            <div className="w-full xl:w-3/4 lg:w-11/12 flex">
+                                <div className="w-full lg:w-1/2 bg-white rounded-lg lg:rounded-l-none px-2 text-left">
+                                    <h3 className="font-semibold text-lg sm:text-sm md: text-lg lg:text-xl xl:text-3xl mt-2">
+                                        {singleCase.title}
+                                    </h3>
+                                    <span className="text-xs font-medium">
+                                        {singleCase.event}
                                     </span>
+                                    <br />
+                                    <span className="text-xs font-semibold leading-snug">
+                                        {singleCase.place}
+                                    </span>
+                                    <p className="text-xs md:text-md mt-2">{singleCase.description.childMarkdownRemark.excerpt}
+                                    </p>
                                 </div>
-                                <div className="flex-col">
-                                    <span className="text-xs">{singleCase.place}
-                                    </span>
+
+                                <div className="w-full lg:w-1/2 bg-white p-2 rounded-lg lg:rounded-l-none">
+                                    {singleCase.gallery.map( ( media, id ) => {
+                                        if ( media.file.contentType === "image/jpeg" || media.file.contentType === "image/png" ) {
+                                            return (
+                                                <Gallery key={id} media={media}
+                                                />
+                                            )
+                                        } else {
+                                            return (
+                                                <VisualArtModule key={id}
+                                                    media={media}
+                                                />
+                                            )
+                                        }
+                                    } )}
                                 </div>
                             </div>
 
-                            <div className="px-6 mt-2 text-left text-gray-800">
-                                <h3 className="font-light text-base sm:text-sm md: text-lg lg:text-xl xl:text-4xl">
-                                    {singleCase.title}
-                                </h3>
-                                <p className="text-sm">{singleCase.description.childMarkdownRemark.excerpt}
+
+                            <hr class="mb-8 border-t shadow-md" />
+                            <div className="px-2 text-left text-sm">
+                                <p className="leading-tight">{singleCase.description.description}
                                 </p>
-                                <p className="text-sm sm:text-xs md:text-sm lg:text-xl">{singleCase.description.description}
-                                </p>
-                                <div className="flex-1">
-                                </div>
                             </div>
-                        </>
+                        </div>
                     )
                 } )}
-
             </div>
         </div>
     )
@@ -53,22 +67,4 @@ const CaseStudy = () => {
 
 export default CaseStudy
 
-//
-/*            <div className="max-w-md mx-auto">
-                    {singleCase.gallery.map( ( media, id ) => {
-                        if ( media.file.contentType === "image/jpeg" ) {
-                            return (
-                                <Img
-                                key={media.id}
-                                fluid={media.fluid}
-                                alt={media.file.title}
-                                className="rounded-lg shadow-xl"
-                                />
-                            )
-                        } else {
-                            return <VisualArtModule key={id} media={media} />
-                        }
-                    }
-                    )}
-            </div>
-        */
+

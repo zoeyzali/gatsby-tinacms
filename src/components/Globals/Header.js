@@ -1,34 +1,50 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { Link, navigate } from "gatsby"
+import PropTypes from "prop-types"
+import { isLoggedIn, logout } from "../AuthUtils/Auth"
 
-const Header = () => (
-    <header className="flex justify-between bg-white"
-    >
-        <div className="header w-full py-6 px-4">
-            <Link
-                to="/"
-                className="float-left h-10 brand text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                COCO.
+const Header = () => {
+    return (
+        <header className="flex justify-between bg-white">
+            <div className="header w-full py-6 pr-2">
+                <Link
+                    to="/"
+                    className="float-left h-10 brand text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl px-4">
+                    COCO.
             </Link>
-            <Link
-                to="/projects"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between bg-yellow-800 tracking-widest">
-                work
+                <Link
+                    to="/projects"
+                    className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
+                    work
         </Link>
-            <Link
-                to="/about"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl justify-between bg-yellow-800 tracking-widest">
-                about
+                <Link
+                    to="/about"
+                    className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
+                    about
         </Link>
-            <Link
-                to="/contact"
-                className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-widest">
-                contact
+                <Link
+                    to="/contact"
+                    className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
+                    contact
         </Link>
-        </div>
-    </header>
-)
+                <Link
+                    to="/app/admin"
+                    className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
+                    admin
+        </Link>
+                {isLoggedIn() ? (
+                    <a href="/" onClick={event => {
+                        event.preventDefault()
+                        logout( () => navigate( "/app/login" ) )
+                    }}>
+                        <span className="text-xs hover:bg-yellow-800">Logout</span>
+                    </a>
+                ) : null}
+            </div>
+        </header>
+    )
+}
+
 
 Header.propTypes = {
     siteTitle: PropTypes.string,

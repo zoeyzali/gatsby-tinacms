@@ -6,12 +6,12 @@ const VisualArtModule = ( props ) => {
     // console.log( videoMedia, videoMedia.file.url )
 
     return (
-        <div className="w-full px-6 mb-2 player-wrapper">
+        <div className="py-2 player-wrapper">
             <ReactPlayer
                 id={videoMedia.id}
                 loading="lazy"
                 url={videoMedia.file.url}
-                className="mx-auto rounded-lg shadow-xl"
+                className="mx-auto rounded-lg shadow-xl outline-none"
                 playing={false}
                 muted={true}
                 controls={true}

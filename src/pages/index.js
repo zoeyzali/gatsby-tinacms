@@ -5,10 +5,10 @@ import Home from "../components/Home"
 
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Home />
-  </Layout>
+    <Layout>
+        <SEO title="Home" />
+        <Home />
+    </Layout>
 )
 
 export default IndexPage
