@@ -12,6 +12,7 @@ const CaseStudy = () => {
             <div className="bg-gray-100 px-4 shadow-lg">
                 <h1 className="font-semibold uppercase sm:text-md md:text-lg lg:text-xl xl:text-4xl tracking-wider px-2 mt-2">
                     <span className="bg-yellow-800 tracking-widest align-middle">case</span>study</h1>
+
                 {caseData.edges.map( ( { node: singleCase } ) => {
                     return (
                         <div className="flex flex-wrap text-gray-800"
@@ -51,7 +52,7 @@ const CaseStudy = () => {
                                 </div>
                             </div>
 
-                            <hr class="mb-8 border-t shadow-md" />
+                            <hr className="mb-8 border-t shadow-md" />
                             <div className="px-2 xl:px-16 text-left text-sm">
                                 <p className="leading-tight">{singleCase.description.description}
                                 </p>

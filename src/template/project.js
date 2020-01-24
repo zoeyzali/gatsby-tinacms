@@ -8,8 +8,6 @@ import Layout from '../components/layout'
 function Project( props ) {
     const data = props.data.markdownRemark
     const allProjectData = useProjectData()
-    console.log( data, 'from props.data.markdownRemark' )
-    console.log( allProjectData, 'aaaaall project DATA' )
     const nextSlug = getNextSlug( data.fields.slug )
 
     function getNextSlug( slug ) {
@@ -27,7 +25,7 @@ function Project( props ) {
     return (
         <Layout>
             <div className="w-full md:w-1/2 mb-6 md:mb-0 bg-white mx-auto border rounded-lg shadow-xl mt-4">
-                <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} className="h-auto object-fit object-center object-cover" />
+                <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} className="h-64 object-fit object-center object-cover" />
                 <div className="text-gray-700 px-2">
                     <h1 className="font-lighter text-4xl capitalize tracking-wide">{data.frontmatter.title}</h1>
                     <span className="text-sm font-semibold">          {data.frontmatter.date}

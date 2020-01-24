@@ -24,7 +24,7 @@ const Home = () => {
                 <div className="py-6">
                 </div>
             </div>
-            <hr class="mb-8 border-t shadow-xl" />
+            <hr className="mb-8 border-t shadow-xl" />
 
             <div className="container mx-auto mt-4">
                 <CaseStudy />

@@ -5,7 +5,7 @@ import { isLoggedIn, logout } from "../AuthUtils/Auth"
 
 const Header = () => {
     return (
-        <header className="flex justify-between bg-white">
+        <header className="flex justify-around bg-white">
             <div className="header w-full py-6 pr-2">
                 <Link
                     to="/"
@@ -15,7 +15,7 @@ const Header = () => {
                 <Link
                     to="/projects"
                     className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
-                    work
+                    artwork
         </Link>
                 <Link
                     to="/about"
@@ -28,18 +28,25 @@ const Header = () => {
                     contact
         </Link>
                 <Link
-                    to="/app/admin"
+                    to="/exhibitions"
                     className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
-                    admin
+                    shows&stuff
         </Link>
                 {isLoggedIn() ? (
                     <a href="/" onClick={event => {
                         event.preventDefault()
                         logout( () => navigate( "/app/login" ) )
                     }}>
-                        <span className="text-xs hover:bg-yellow-800">signout</span>
+                        <span className="text-xs hover:bg-yellow-800">Signout</span>
                     </a>
-                ) : null}
+                ) : (
+                        <Link
+                            to="/app/admin"
+                            className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
+                            admin
+                    </Link>
+                    )
+                }
             </div>
         </header>
     )
