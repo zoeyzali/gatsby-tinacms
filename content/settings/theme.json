@@ -1,0 +1,11 @@
+  {
+      "color": {
+          "black": "#4A4A4A",
+          "white": "#FFFFFF",
+          "primary": "#f32196",
+          "secondary": "#7D3569"
+      },
+      "__gatsby_resolved": {
+          "fileRelativePath": "/content/settings/theme.json"
+      }
+  }
