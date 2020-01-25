@@ -18,8 +18,8 @@ const Exhibition = ( { exhibition } ) => {
                     {exhibition.place}
                 </div>
             </div>
-            <div className="p-3">
-                <Link to={`/projects/${exhibition.id}`} rel="noopener" key={exhibition.id}>
+            <div className="p-2">
+                <Link to={`/exhibitions/${exhibition.title}`} rel="noopener" key={exhibition.id}>
                     <h5 className="font-lighter text-xl uppercase tracking-tight truncate">{exhibition.title}</h5>
                 </Link>
                 <div className="text-gray-700 text-sm font-lighter tracking-tight">

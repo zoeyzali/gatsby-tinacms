@@ -12,7 +12,7 @@ export const handleLogin = ( { username, password } ) => {
     if ( username === `zoeecoding` && password === `pass` ) {
         return setUser( {
             username: `zoeecoding`,
-            name: `zoe`,
+            name: `Zoe`,
             email: `zoeecoding@example.org`,
         } )
     }

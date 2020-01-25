@@ -5,6 +5,10 @@ import { remarkForm, DeleteAction } from 'gatsby-tinacms-remark'
 import useProjectData from '../hooks/useProjectData'
 import Layout from '../components/layout'
 
+// import { isLoggedIn } from '../components/AuthUtils/Auth'
+// import ProjectDetail from '../components/ProjectDetail'
+
+
 function Project( props ) {
     const data = props.data.markdownRemark
     const allProjectData = useProjectData()
@@ -28,7 +32,8 @@ function Project( props ) {
                 <Img fluid={data.frontmatter.hero_image.childImageSharp.fluid} alt={data.frontmatter.title} className="h-64 object-fit object-center object-cover" />
                 <div className="text-gray-700 px-2">
                     <h1 className="font-lighter text-4xl capitalize tracking-wide">{data.frontmatter.title}</h1>
-                    <span className="text-sm font-semibold">          {data.frontmatter.date}
+                    <span className="text-sm font-semibold">
+                        {data.frontmatter.date}
                     </span>
                 </div>
                 <div className="p-2">
@@ -36,16 +41,19 @@ function Project( props ) {
                         dangerouslySetInnerHTML={{ __html: data.html }}>
                         {data.frontmatter.description}
                     </div>
-                    <div className="font-semibold text-xs">
+
+                    <div className="font-semibold text-sm">
                         Added by {data.frontmatter.author}
+                        <a href={`/projects/${nextSlug}`}>
+                            <svg className="h-10 w-10 fill-current text-gray-800 pt-2 pb-4 float-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.172 9l-6.071-6.071 1.414-1.414L20 10l-.707.707-7.778 7.778-1.414-1.414L16.172 11H0V9z" /></svg>
+                        </a>
                     </div>
-                    <a href={`projects/${nextSlug}`} className="">
-                    </a>
                 </div>
             </div>
         </Layout>
     )
 }
+
 
 const ProjectTemplateOptions = {
     actions: [DeleteAction],
@@ -85,6 +93,7 @@ const ProjectTemplateOptions = {
         },
     ]
 }
+
 
 export default remarkForm( Project, ProjectTemplateOptions )
 

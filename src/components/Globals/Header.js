@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import { isLoggedIn, logout } from "../AuthUtils/Auth"
+import { isLoggedIn, logout, getUser } from "../AuthUtils/Auth"
 
 const Header = () => {
     return (
@@ -33,18 +33,26 @@ const Header = () => {
                     shows&stuff
         </Link>
                 {isLoggedIn() ? (
+                    <Link
+                        to="/app/admin"
+                        className="text-sm bg-yellow-800 capitalize tracking-wide">
+                        {getUser().name}
+                    </Link>
+                ) : null
+                }
+                {isLoggedIn() ? (
                     <a href="/" onClick={event => {
                         event.preventDefault()
                         logout( () => navigate( "/app/login" ) )
                     }}>
-                        <span className="text-xs hover:bg-yellow-800">Signout</span>
+                        <span className="text-sm hover:bg-yellow-800 rounded-md">Signout</span>
                     </a>
                 ) : (
                         <Link
                             to="/app/admin"
-                            className="text-md sm:text-sm md:text-xl lg:text-2xl xl:text-2xl bg-yellow-800 tracking-wide">
-                            admin
-                    </Link>
+                            className="text-sm hover:bg-yellow-800 rounded">
+                            Sign in
+                        </Link>
                     )
                 }
             </div>

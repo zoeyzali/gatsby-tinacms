@@ -2,33 +2,49 @@ import React from 'react'
 import { getUser, isLoggedIn } from './AuthUtils/Auth'
 import { withPlugin } from 'tinacms'
 import { RemarkCreatorPlugin } from 'gatsby-tinacms-remark'
-import { Link } from "gatsby"
+import useProjectData from "../hooks/useProjectData"
 
-const Admin = () => (
-    <div className="text-center mt-4 xl:mt-6">
-        <div className="antialiased text-center mb-3 p-2">
-            <h1 className="tracking-wide font-semibold text-center">Admin Settings</h1>
-            <h3 className="text-center font-medium capitalize">Hello {isLoggedIn() ? getUser().name : "Stranger"}!</h3>
-            {isLoggedIn() ? (
-                <span className="text-xs text-center">
-                    Add Content Here. Preview added content under
-                    <Link to="/app/projects" className="text-xs sm:text-sm md:text-lg lg:text-lg xl:text-2xl bg-yellow-800"> Artworks
-                    </Link>
-                </span>
-            ) : (
-                    <span className="text-xs text-center">
-                        Go to <Link to="/app/login" className="text-xs sm:text-md md:text-lg lg:text-xl xl:text-2xl bg-yellow-800">Login</Link>
-                    </span>
-                )}
+// import { Link } from "gatsby"
+// import ProjectDetail from './ProjectDetail'
+//<ProjectDetail />
 
-            <p className="py-2">Name:> <span className="bg-yellow-800 capitalize">{getUser().name}</span>
-                <br />
-                Email:> <span className="bg-yellow-800">{getUser().email}</span>
-            </p>
+const Admin = () => {
+    const projectsData = useProjectData()
+    return (
+        <div className="text-center mt-4 xl:mt-6 bg-red-500">
+            <div className="antialiased text-center text-gray-800">
+                <h3 className="text-center font-medium capitalize pt-2">
+                    Hello {isLoggedIn() ? getUser().name : "Stranger"}!</h3>
+
+                <p className="px-2 text-xs">
+                    Name:> <span className="capitalize">
+                        {getUser().name}</span>
+                    <br />
+                    Email:> <span className="">
+                        {getUser().email}</span>
+                </p>
+
+                <div className="px-4 py-6">
+                    {isLoggedIn() ? (
+                        <span className="text-xs text-center">
+                            List of added content. Click on the links to edit. Add new content from the sidebar. {" "}
+                            <br />
+                            {projectsData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
+                                console.log( project.node.fields.slug )
+                                return (
+                                    <a href={`/app/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.fields.slug} className="text-sm">
+                                        <span key={project.node.id}>{project.node.frontmatter.title}</span>
+                                    </a>
+                                )
+                            } )}
+                        </span>
+                    ) : ( <p>Protected route</p> )
+                    }
+                </div>
+            </div>
         </div>
-    </div>
-)
-
+    )
+}
 
 const CreateProjectButton = new RemarkCreatorPlugin( {
     label: 'Add New Content',
