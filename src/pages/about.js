@@ -31,7 +31,7 @@ const AboutPage = () => {
             <h1 className="antialiased tracking-wider font-light mt-6 py-3 text-center">
                 visual art & illustrations collective</h1>
             <div className="flex-col float-left flex-wrap shadow-lg border-md">
-                <span className="text-sm text-gray-800 ml-4 -mb-10">
+                <span className="text-md text-gray-800 ml-6">
                     Loosely defined, an art collective is a group of artists working together to achieve a common objective.
                 </span>
                 <hr className="my-3 border-t shadow-lg" />
