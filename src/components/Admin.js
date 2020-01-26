@@ -5,8 +5,7 @@ import { RemarkCreatorPlugin } from 'gatsby-tinacms-remark'
 import useProjectData from "../hooks/useProjectData"
 
 // import { Link } from "gatsby"
-// import ProjectDetail from './ProjectDetail'
-//<ProjectDetail />
+
 
 const Admin = () => {
     const projectsData = useProjectData()
@@ -30,10 +29,11 @@ const Admin = () => {
                             List of added content. Click on the links to edit. Add new content from the sidebar. {" "}
                             <br />
                             {projectsData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
-                                console.log( project.node.fields.slug )
+                                // console.log( project.node.fields.slug )
                                 return (
-                                    <a href={`/app/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.fields.slug} className="text-sm">
-                                        <span key={project.node.id}>{project.node.frontmatter.title}</span>
+                                    <a href={`/app/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.fields.slug} className="text-md font-medium">
+                                        <span key={project.node.id}>{project.node.frontmatter.title}
+                                        </span>
                                     </a>
                                 )
                             } )}
@@ -46,6 +46,8 @@ const Admin = () => {
     )
 }
 
+
+// create "tinaCMS WYSIWYG" sidebar form
 const CreateProjectButton = new RemarkCreatorPlugin( {
     label: 'Add New Content',
     filename: name => {

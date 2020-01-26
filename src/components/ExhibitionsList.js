@@ -32,7 +32,7 @@ const ExhibitionsList = () => {
   return (
     <StaticQuery query={getExhibitionsData} render={data => {
       return (
-        <div className="flex justify-center flex-wrap px-2">
+        <div className="w-full flex container justify-center flex-wrap px-2 shadow-xl">
           {data.allExhibitions.edges.map( ( { node: exhibition } ) => {
             return <Exhibition key={exhibition.id} exhibition={exhibition} />
           } )}

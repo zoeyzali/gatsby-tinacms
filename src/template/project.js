@@ -1,13 +1,9 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { graphql } from "gatsby"
-import { remarkForm, DeleteAction } from 'gatsby-tinacms-remark'
 import useProjectData from '../hooks/useProjectData'
 import Layout from '../components/layout'
-
-// import { isLoggedIn } from '../components/AuthUtils/Auth'
-// import ProjectDetail from '../components/ProjectDetail'
-
+import { remarkForm, DeleteAction } from 'gatsby-tinacms-remark'
 
 function Project( props ) {
     const data = props.data.markdownRemark
@@ -41,11 +37,13 @@ function Project( props ) {
                         dangerouslySetInnerHTML={{ __html: data.html }}>
                         {data.frontmatter.description}
                     </div>
-
                     <div className="font-semibold text-sm">
                         Added by {data.frontmatter.author}
                         <a href={`/projects/${nextSlug}`}>
-                            <svg className="h-10 w-10 fill-current text-gray-800 pt-2 pb-4 float-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.172 9l-6.071-6.071 1.414-1.414L20 10l-.707.707-7.778 7.778-1.414-1.414L16.172 11H0V9z" /></svg>
+                            <svg className="h-10 w-10 fill-current text-gray-800 pt-2 pb-4 float-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M16.172 9l-6.071-6.071 1.414-1.414L20 10l-.707.707-7.778 7.778-1.414-1.414L16.172 11H0V9z"
+                                />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -53,7 +51,6 @@ function Project( props ) {
         </Layout>
     )
 }
-
 
 const ProjectTemplateOptions = {
     actions: [DeleteAction],
@@ -94,7 +91,7 @@ const ProjectTemplateOptions = {
     ]
 }
 
-
+// export default Project
 export default remarkForm( Project, ProjectTemplateOptions )
 
 export const getProjectData = graphql`

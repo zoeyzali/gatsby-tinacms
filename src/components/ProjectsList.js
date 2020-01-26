@@ -2,7 +2,6 @@ import React from 'react'
 import Img from 'gatsby-image'
 import useProjectData from '../hooks/useProjectData'
 
-
 const ProjectsList = () => {
     const projectData = useProjectData()
     function renderProjectData() {
@@ -11,9 +10,9 @@ const ProjectsList = () => {
                 <div className="antialiased flex flex-wrap -mx-3 mb-4">
                     {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                         return (
-                            <div className="w-full md:w-1/2 px-3 md:mb-0 rounded-lg border bg-white px-4 mx-auto" key={project.node.fields.slug}
+                            <div className="w-full md:w-1/2 px-3 md:mb-0 xl:mt-6 rounded-lg border bg-white px-4 mx-auto" key={project.node.fields.slug}
                              >
-                                <a href={`projects/${project.node.fields.slug}`} rel="noopener" key={project.node.id}>
+                                <a href={`/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.id}>
                                     <div>
                                         <h1 className="font-semibold text-2xl tracking-wide text-gray-800 truncate mt-2">{project.node.frontmatter.title}
                                         </h1>

@@ -1,16 +1,18 @@
 const path = require( "path" )
 
+
 module.exports.onCreateNode = ( { node, actions } ) => {
   // Transform the new node here and create a new node or
   // create a new node field.
   const { createNodeField } = actions
   if ( node.internal.type === "MarkdownRemark" ) {
+    // const value = createFilePath( { node, getNode } )
     const slug = path.basename( node.fileAbsolutePath, ".md" )
     createNodeField( {
       //same as node: node
       node,
       name: "slug",
-      value: slug,
+      value: slug
     } )
   }
 }
@@ -22,8 +24,8 @@ module.exports.createPages = async ( { graphql, actions } ) => {
   const projectTemplate = path.resolve( "./src/template/project.js" )
   //get slugs
   const response = await graphql( `
-  query  {
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}, sort: {order: DESC, fields: timeToRead}) {
+  query { 
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}, sort: {order: DESC, fields: timeToRead}) {
     edges {
       node {
         fields {
@@ -62,19 +64,7 @@ module.exports.onCreatePage = async ( { page, actions } ) => {
 }
 
 
-// module.exports.onCreatePage = async ( { page, actions } ) => {
-//   const { createPage } = actions
-//   const ProjectDetail = path.resolve( "./src/components/ProjectDetail.js" )
-//   createPage( {
-//     component: ProjectDetail,
-//     context: {
-//       ...page.context,
-//       slug: edge.node.fields.slug,
-//       house: admin,
-//     },
-//     path: `/app/projects/${edge.node.fields.slug}`,
-//   } )
-// }
+
 
 
 // Allow me to use something like: import { X } from 'directory' instead of '../../folder/directory'
