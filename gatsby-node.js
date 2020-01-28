@@ -1,12 +1,11 @@
 const path = require( "path" )
 
 
-module.exports.onCreateNode = ( { node, actions } ) => {
+exports.onCreateNode = ( { node, actions } ) => {
   // Transform the new node here and create a new node or
   // create a new node field.
   const { createNodeField } = actions
   if ( node.internal.type === "MarkdownRemark" ) {
-    // const value = createFilePath( { node, getNode } )
     const slug = path.basename( node.fileAbsolutePath, ".md" )
     createNodeField( {
       //same as node: node
@@ -17,11 +16,13 @@ module.exports.onCreateNode = ( { node, actions } ) => {
   }
 }
 
-module.exports.createPages = async ( { graphql, actions } ) => {
+exports.createPages = async ( { graphql, actions } ) => {
   const { createPage } = actions
   //dynamically create pages here
   //get path to template
   const projectTemplate = path.resolve( "./src/template/project.js" )
+  const exhibitionTemplate = path.resolve( "./src/template/exhibition.js" )
+
   //get slugs
   const response = await graphql( `
   query { 
@@ -34,8 +35,19 @@ module.exports.createPages = async ( { graphql, actions } ) => {
       }
     }
   }
+  allContentfulExhibitions {
+    edges {
+      node {
+        slug
+        id
+        title
+        contentful_id
+      }
+    }
+  }
 }
 `)
+  // console.log( response.data.allContentfulExhibitions.edges, 'response gatsby-node' )
 
   //create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach( edge => {
@@ -45,17 +57,24 @@ module.exports.createPages = async ( { graphql, actions } ) => {
       context: {
         slug: edge.node.fields.slug,
       },
-      // component: ProjectDetail,
-      // path: `/app/projects/${edge.node.fields.slug}`,
-      // context: {
-      //   slug: edge.node.fields.slug
-      // }
+    } )
+  } )
+
+  response.data.allContentfulExhibitions.edges.forEach( edge => {
+    console.log( edge, 'contentful' )
+    createPage( {
+      component: exhibitionTemplate,
+      path: `/exhibitions/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug,
+        id: edge.node.id
+      }
     } )
   } )
 }
 
 
-module.exports.onCreatePage = async ( { page, actions } ) => {
+exports.onCreatePage = async ( { page, actions } ) => {
   const { createPage } = actions
   if ( page.path.match( /^\/app/ ) ) {
     page.matchPath = "/app/*"
@@ -68,10 +87,10 @@ module.exports.onCreatePage = async ( { page, actions } ) => {
 
 
 // Allow me to use something like: import { X } from 'directory' instead of '../../folder/directory'
-// exports.onCreateWebpackConfig = ( { stage, actions } ) => {
-//   actions.setWebpackConfig( {
-//     resolve: {
-//       modules: [path.resolve( __dirname, 'src' ), 'node_modules'],
-//     },
-//   } )
-// }
+exports.onCreateWebpackConfig = ( { stage, actions } ) => {
+  actions.setWebpackConfig( {
+    resolve: {
+      modules: [path.resolve( __dirname, 'src' ), 'node_modules'],
+    },
+  } )
+}

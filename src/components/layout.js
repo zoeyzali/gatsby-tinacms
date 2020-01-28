@@ -18,7 +18,7 @@ const Layout = ( { children } ) => {
   return (
     <div className="flex flex-col">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="">
+      <div className="flex-wrap">
         <main className="relative min-h-screen">{children}</main>
 
         <footer className="absolute inset-x-0 font-medium text-center bg-gray-100 py-8 mt-4 tracking-wide text-sm">
