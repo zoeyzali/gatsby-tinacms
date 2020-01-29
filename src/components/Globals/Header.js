@@ -5,11 +5,11 @@ import { isLoggedIn, logout, getUser } from "../AuthUtils/Auth"
 
 const Header = () => {
     return (
-        <header className="flex justify-around bg-white lg:mt-6 lg:px-6">
-            <div className="header w-full py-6 xl:mt-8 flex-wrap">
+        <header className="flex justify-around bg-white lg:mt-5 lg:px-6">
+            <div className="header w-full py-6 xl:mt-6 flex-wrap">
                 <Link
                     to="/"
-                    className="float-left h-10 brand text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl px-5 sm:px-2 sm:pl-1">
+                    className="float-left h-10 brand text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl px-5">
                     COCO.
             </Link>
                 <Link

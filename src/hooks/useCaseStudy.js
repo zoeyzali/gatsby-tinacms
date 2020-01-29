@@ -12,8 +12,8 @@ export default function useCaseStudy() {
         description {
           description
           childMarkdownRemark {
+            html
             excerpt(pruneLength: 140)
-            excerptAst(pruneLength: 100)
           }
         }
         event(formatString: "YYYY-MM-DD")
@@ -35,6 +35,7 @@ export default function useCaseStudy() {
       }
     }
   }
+
 }
 `)
   // console.log( data.caseStudyData, 'casestudy HOOOK' )

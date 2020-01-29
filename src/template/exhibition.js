@@ -8,17 +8,17 @@ import Img from 'gatsby-image'
 const Show = ( { data } ) => {
     const show = data.contentfulExhibitions
     const upcomingEvent = isFuture( show.eventDate )
-    console.log( upcomingEvent, 'upcoming' )
 
     function isFuture( eventDate ) {
         let today = new Date().toLocaleDateString()
         console.log( today, 'tooooday date' )
-        let upcomingEvent = new Date( today - eventDate ).toLocaleString()
-        if ( today > eventDate ) {
-            return upcomingEvent
-        } else {
-            return "TBA"
-        }
+        let upcomingEvent = new Date( eventDate ).toLocaleString()
+        console.log( upcomingEvent, 'sup' )
+        // if ( today > eventDate ) {
+        //     return upcomingEvent
+        // } else {
+        //     return "TBA"
+        // }
     }
 
     return (

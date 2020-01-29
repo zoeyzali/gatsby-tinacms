@@ -56,23 +56,23 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
         return `content/projects/${slug}.md`
     },
     fields: [
-        {
-            name: "hero",
-            description: "Pick a good one",
-            label: "Hero",
-            component: "image",
-            // Generate the frontmatter value based on the filename
-            parse: filename => `/content/images/${filename}`,
-            // Decide the file upload directory for the image
-            uploadDir: () => {
-                return "/content/images/"
-            },
-            // Todo: Fix the preview source
-            previewSrc: ( postInfo ) => {
-                console.log( postInfo.hero, 'thumbnail?' )
-                return postInfo.hero
-            }
-        },
+        // {
+        //     name: "hero",
+        //     description: "Pick a good one",
+        //     label: "Hero",
+        //     component: "image",
+        //     // Generate the frontmatter value based on the filename
+        //     parse: filename => `/content/images/${filename}`,
+        //     // Decide the file upload directory for the image
+        //     uploadDir: () => {
+        //         return "/content/images/"
+        //     },
+        //     // Todo: Fix the preview source
+        //     previewSrc: ( postInfo ) => {
+        //         console.log( postInfo.hero, 'thumbnail?' )
+        //         return postInfo.hero
+        //     }
+        // },
         {
             label: 'Title',
             name: 'title',

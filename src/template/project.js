@@ -21,7 +21,6 @@ function Project( props ) {
             return allSlugs[0]
         }
     }
-
     return (
         <Layout>
             <div className="w-full md:w-1/2 mb-6 md:mb-0 bg-white mx-auto border rounded-lg 
