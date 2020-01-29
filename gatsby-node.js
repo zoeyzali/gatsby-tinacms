@@ -26,7 +26,7 @@ exports.createPages = async ( { graphql, actions } ) => {
   //get slugs
   const response = await graphql( `
   query { 
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}, sort: {order: DESC, fields: timeToRead}) {
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
     edges {
       node {
         fields {
@@ -47,7 +47,7 @@ exports.createPages = async ( { graphql, actions } ) => {
   }
 }
 `)
-  // console.log( response.data.allContentfulExhibitions.edges, 'response gatsby-node' )
+  console.log( response.data.allMarkdownRemark.edges, 'response gatsby-node' )
 
   //create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach( edge => {

@@ -69,6 +69,7 @@ const CreateProjectButton = new RemarkCreatorPlugin( {
             },
             // Todo: Fix the preview source
             previewSrc: ( postInfo ) => {
+                console.log( postInfo.hero, 'thumbnail?' )
                 return postInfo.hero
             }
         },
