@@ -3,15 +3,14 @@ import ReactPlayer from 'react-player'
 
 const VisualArtModule = ( props ) => {
     const videoMedia = props.media
-    // console.log( videoMedia, videoMedia.file.url )
 
     return (
-        <div className="py-2 player-wrapper">
+        <div className="player-wrapper rounded-xl">
             <ReactPlayer
                 id={videoMedia.id}
                 loading="lazy"
                 url={videoMedia.file.url}
-                className="mx-auto rounded-lg shadow-xl outline-none"
+                className="mx-auto shadow-lg outline-none"
                 playing={false}
                 muted={true}
                 controls={true}

@@ -61,7 +61,7 @@ exports.createPages = async ( { graphql, actions } ) => {
   } )
 
   response.data.allContentfulExhibitions.edges.forEach( edge => {
-    console.log( edge, 'contentful' )
+    // console.log( edge, 'contentful' )
     createPage( {
       component: exhibitionTemplate,
       path: `/exhibitions/${edge.node.slug}`,

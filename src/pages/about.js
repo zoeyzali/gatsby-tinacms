@@ -2,10 +2,11 @@ import React from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import SEO from "../components/seo"
+import Contact from '../components/Contact'
 
 const getArtistBio = graphql`
-{
-  artistBio: allContentfulArtist {
+{ artistBio: allContentfulArtist {
     edges {
       node {
         id
@@ -28,10 +29,11 @@ const getArtistBio = graphql`
 const AboutPage = () => {
     return (
         <Layout>
+            <SEO title={`About`} />
             <div className="container mx-auto mt-auto lg:mt-4">
                 <h1 className="antialiased tracking-wider font-light mt-8 py-3 text-center">
                     visual art & illustrations collective</h1>
-                <div className="flex-row container mx-auto px-0 lg:px-4 flex-wrap text-gray-700">
+                <div className="flex-row container mx-auto px-0 lg:px-4 flex-wrap text-gray-700 self-center">
                     <div className="flex-col float-left shadow-lg font-semibold">
                         <span className="text-md sm:text-sm ml-12 sm:ml-auto">
                             Loosely defined, an art collective is a group of artists working together to achieve a common objective.
@@ -56,7 +58,7 @@ const AboutPage = () => {
                             {data.artistBio.edges.map( ( { node: artist } ) => {
                                 return (
                                     <div key={artist.id}
-                                        className="w-full md:w-1/2 lg:w-3/5 mb-6 md:mb-0 bg-white mx-auto border rounded  shadow-inner-md shadow-xl flex-wrap">
+                                        className="w-full md:w-1/3 lg:w-3/5 mb-6 md:mb-0 bg-white mx-auto border rounded  shadow-inner-md shadow-xl flex-wrap">
                                         <div className="px-5 py-8 -mt-10 sm:mt-0 md:mt-0">
                                             <div className="font-light text-6xl text-gray-800">
                                                 {artist.name}
@@ -81,6 +83,8 @@ const AboutPage = () => {
                     )
                 }}
                 />
+
+                <Contact />
             </div>
         </Layout>
     )

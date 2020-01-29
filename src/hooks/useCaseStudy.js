@@ -16,7 +16,7 @@ export default function useCaseStudy() {
             excerptAst(pruneLength: 100)
           }
         }
-        event(formatString: "MMMM DD YYYY")
+        event(formatString: "YYYY-MM-DD")
         gallery {
           id
           file {
@@ -24,10 +24,10 @@ export default function useCaseStudy() {
             contentType
             url
           }
-          fixed(width: 300, height: 300) {
+          fixed(width: 300, height: 250) {
             ...GatsbyContentfulFixed_tracedSVG
           }
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 700) {
                 src
               ...GatsbyContentfulFluid_tracedSVG
           }

@@ -7,15 +7,15 @@ const ProjectsList = () => {
     function renderProjectData() {
         return (
             <div>
-                <div className="antialiased flex flex-wrap -mx-3 mb-4">
+                <div className="antialiased flex flex-wrap mb-2 py-4">
                     {projectData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
                         return (
-                            <div className="w-full md:w-1/2 px-3 md:mb-0 xl:mt-6 rounded-lg border bg-white px-4 mx-auto" key={project.node.fields.slug}
+                            <div className="w-full md:w-1/2 md:mb-0 xl:mt-6 rounded-lg border bg-white px-3 mx-auto text-gray-800" key={project.node.fields.slug}
                              >
                                 <a href={`/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.id}>
                                     <div>
-                                        <h1 className="font-semibold text-2xl tracking-wide text-gray-800 truncate mt-2">{project.node.frontmatter.title}
-                                        </h1>
+                                        <h2 className="font-semibold tracking-wide truncate mt-2 py-3">{project.node.frontmatter.title}
+                                        </h2>
                                         <div className="h-auto pb-2/3">
                                             <Img
                                                 fluid={
@@ -27,7 +27,7 @@ const ProjectsList = () => {
                                                 object-fit rounded-lg"
                                             />
                                         </div>
-                                        <div className="font-medium text-xs text-gray-700 tracking-wide px-2">
+                                        <div className="font-semibold text-xs text-gray-700 tracking-wide px-2">
                                             <span>{project.node.frontmatter.date}
                                             </span>
                                             <p className="font-lighter pt-2">{project.node.excerpt}</p>
@@ -43,7 +43,7 @@ const ProjectsList = () => {
     }
 
     return (
-        <div className="w-full container mx-auto rounded shadow-xl overflow-hidden project-page">
+        <div className="container mx-auto px-4 rounded-lg overflow-hidden project-page">
             {renderProjectData()}
         </div>
     )

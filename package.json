@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "env-cmd": "^10.0.1",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.31",
@@ -35,6 +36,7 @@
     "tinacms": "^0.11.0"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^5.1.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -45,8 +47,10 @@
     "build": "gatsby build",
     "dev": "gatsby develop -o",
     "develop": "gatsby develop",
+    "gbuild": "env-cmd -f .env.development gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
+    "develop_env_cmd": "env-cmd gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

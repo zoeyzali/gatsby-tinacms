@@ -6,8 +6,8 @@ import SEO from '../components/seo'
 const exhibitions = () => (
   <Layout>
     <SEO title="Exhibitions & Shows" />
-    <div className="w-100 antialiased text-center my-8 pt-8 -mx-3">
-      <h1 className="font-semibold text-4xl sm:text-md px-2">Rece<span className="bg-yellow-800 tracking-widest">nt Exhibitions</span>
+    <div className="container mx-auto px-4 rounded-lg overflow-hidden mt-8 py-6">
+      <h1 className="font-medium text-center sm:text-md px-2">Rece<span className="bg-yellow-800 tracking-widest shadow-lg">nt Exhibitions</span>
       </h1>
       <ExhibitionsList />
     </div>

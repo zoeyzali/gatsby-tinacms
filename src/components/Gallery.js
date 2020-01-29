@@ -3,17 +3,14 @@ import Img from 'gatsby-image'
 
 export const Gallery = ( props ) => {
     const galleryImages = props.media
-    // console.log( galleryImages.fluid, 'from gallery' )
-    //style="background-image: url("galleryImages")"
-
     return (
         <div
-            className="">
+            className="pb-2/3 h-auto">
             <Img
                 key={galleryImages.id}
                 fluid={galleryImages.fluid}
                 alt={galleryImages.title}
-                className="h-32 object-center object-cover rounded-lg shadow-xl"
+                className="h-32 lg:h-48 xl:h-64 object-center object-cover object-fit rounded-lg shadow-xl"
             />
         </div>
     )

@@ -5,32 +5,27 @@ import { isLoggedIn, logout, getUser } from "../AuthUtils/Auth"
 
 const Header = () => {
     return (
-        <header className="flex justify-around bg-white">
+        <header className="flex justify-around bg-white lg:mt-6 lg:px-6">
             <div className="header w-full py-6 xl:mt-8 flex-wrap">
                 <Link
                     to="/"
-                    className="float-left h-10 brand text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl px-4">
+                    className="float-left h-10 brand text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl px-5 sm:px-2 sm:pl-1">
                     COCO.
             </Link>
                 <Link
-                    to="/projects"
-                    className="text-sm sm:text-sm lg:text-xl xl:text-2xl bg-yellow-800 tracking-wide">
-                    artwork
-        </Link>
-                <Link
                     to="/about"
-                    className="text-sm sm:text-sm lg:text-xl xl:text-2xl bg-yellow-800 tracking-wide">
+                    className="text-sm sm:text-xs lg:text-xl xl:text-2xl bg-yellow-800 tracking-wide">
                     about
         </Link>
                 <Link
-                    to="/contact"
-                    className="text-sm sm:text-sm lg:text-xl xl:text-2xl bg-yellow-800 tracking-wide">
-                    contact
+                    to="/projects"
+                    className="text-sm sm:text-xs lg:text-xl xl:text-2xl bg-yellow-800 tracking-wide">
+                    projects
         </Link>
                 <Link
                     to="/exhibitions"
-                    className="text-sm sm:text-sm lg:text-xl xl:text-2xl bg-yellow-800 tracking-wide">
-                    shows
+                    className="text-sm sm:text-xs lg:text-xl xl:text-2xl bg-yellow-800 tracking-wide">
+                    exhibitions
         </Link>
                 {isLoggedIn() ? (
                     <Link
