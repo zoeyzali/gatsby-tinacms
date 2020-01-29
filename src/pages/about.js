@@ -58,7 +58,7 @@ const AboutPage = () => {
                             {data.artistBio.edges.map( ( { node: artist } ) => {
                                 return (
                                     <div key={artist.id}
-                                        className="w-full md:w-1/3 lg:w-3/5 mb-6 md:mb-0 bg-white mx-auto border rounded  shadow-inner-md shadow-xl flex-wrap">
+                                        className="w-full lg:w-3/5 mb-6 md:mb-0 bg-white mx-auto border rounded  shadow-inner-md shadow-xl flex-wrap">
                                         <div className="px-5 py-8 -mt-10 sm:mt-0 md:mt-0">
                                             <div className="font-light text-6xl text-gray-800">
                                                 {artist.name}
