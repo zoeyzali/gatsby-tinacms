@@ -7,5 +7,10 @@
  from = "/*"
 to = "/index.html"
 
-/app/admin.js  /app
-/app/login /app
+  [[redirects]]
+from= "/app/admin.js "
+to=  "/app"
+
+  [[redirects]]
+from= "/app/login"
+to= "/app"
