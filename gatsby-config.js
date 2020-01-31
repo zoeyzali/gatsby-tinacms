@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        apiKey: process.env.NETLIFY_KEY
+        apiKey: process.env.NETLIFY_KEY,
       }
     },
     {

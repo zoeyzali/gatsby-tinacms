@@ -6,4 +6,6 @@
   [[redirects]]
  from = "/*"
 to = "/index.html"
-status = 200
+
+/app/admin.js  /app
+/app/login /app
