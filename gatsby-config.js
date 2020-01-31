@@ -27,6 +27,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        apiKey: process.env.NETLIFY_KEY
+      }
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
