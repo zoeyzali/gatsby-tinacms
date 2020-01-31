@@ -4,13 +4,11 @@ import { withPlugin } from 'tinacms'
 import { RemarkCreatorPlugin } from 'gatsby-tinacms-remark'
 import useProjectData from "../hooks/useProjectData"
 
-// import { Link } from "gatsby"
-
 
 const Admin = () => {
     const projectsData = useProjectData()
     return (
-        <div className="text-center mt-4 xl:mt-6 bg-red-500">
+        <div className="text-center mt-4 xl:mt-6 bg-yellow-700">
             <div className="antialiased text-center text-gray-800">
                 <h3 className="text-center font-medium capitalize pt-2">
                     Hello {isLoggedIn() ? getUser().name : "Stranger"}!</h3>
@@ -29,9 +27,9 @@ const Admin = () => {
                             List of added content. Click on the links to edit. Add new content from the sidebar. {" "}
                             <br />
                             {projectsData.filter( project => project.node.frontmatter.title !== "" ).map( project => {
-                                // console.log( project.node.fields.slug )
+
                                 return (
-                                    <a href={`/app/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.fields.slug} className="text-md font-medium">
+                                    <a href={`/projects/${project.node.fields.slug}`} rel="noopener" key={project.node.fields.slug} className="text-md font-medium">
                                         <span key={project.node.id}>{project.node.frontmatter.title}
                                         </span>
                                     </a>

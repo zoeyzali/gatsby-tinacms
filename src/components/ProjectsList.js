@@ -4,6 +4,7 @@ import useProjectData from '../hooks/useProjectData'
 
 const ProjectsList = () => {
     const projectData = useProjectData()
+
     function renderProjectData() {
         return (
             <div>

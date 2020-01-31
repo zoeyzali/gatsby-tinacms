@@ -2,9 +2,9 @@ let activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 
 console.log( `Using environment config: ${activeEnv}` )
-
+console.log( process.env.NODE_ENV, 'gatsby env' )
 require( 'dotenv' ).config( {
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${activeEnv}`,
 } )
 
 const theme = require( "./content/settings/theme.json" )
@@ -33,7 +33,7 @@ module.exports = {
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         host: "cdn.contentful.com",
-        downloadLocal: true,
+        // downloadLocal: true,
       },
     },
     {

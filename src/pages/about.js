@@ -31,7 +31,7 @@ const AboutPage = () => {
         <Layout>
             <SEO title={`About`} />
             <div className="container mx-auto mt-auto lg:mt-4">
-                <h1 className="antialiased tracking-wider font-light mt-8 py-3 text-center">
+                <h1 className="antialiased tracking-wider font-light mt-8 pt-3 pb-5 text-center">
                     visual art & illustrations collective</h1>
                 <div className="flex-row container mx-auto px-0 lg:px-4 flex-wrap text-gray-700 self-center">
                     <div className="flex-col float-left shadow-lg font-semibold">
@@ -72,8 +72,8 @@ const AboutPage = () => {
                                                 <Img className="h-48 object-fit object-cover object-center" fluid={artist.portrait.fluid} alt={artist.name} />
                                             </div>
                                             <div className="px-4 mt-4">
-                                                <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-2">#ArtistStudio</span>
-                                                <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-2">#Portfolio Website</span>
+                                                <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-2">#COCO.collective</span>
+                                                <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-2">#ArtStudioPortfolio</span>
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +83,6 @@ const AboutPage = () => {
                     )
                 }}
                 />
-
                 <Contact />
             </div>
         </Layout>

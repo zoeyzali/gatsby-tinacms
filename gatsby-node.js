@@ -5,7 +5,7 @@ exports.onCreateNode = ( { node, actions } ) => {
   // Transform the new node here and create a new node or
   // create a new node field.
   const { createNodeField } = actions
-  if ( node.internal.type === "MarkdownRemark" ) {
+  if ( node.internal.type === "MarkdownRemark" && node.frontmatter.title !== null ) {
     const slug = path.basename( node.fileAbsolutePath, ".md" )
     createNodeField( {
       //same as node: node
@@ -26,7 +26,7 @@ exports.createPages = async ( { graphql, actions } ) => {
   //get slugs
   const response = await graphql( `
   query { 
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/projects/"}}) {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }, filter: {fileAbsolutePath: {regex: "/projects/"}}) {
     edges {
       node {
         fields {
@@ -47,15 +47,17 @@ exports.createPages = async ( { graphql, actions } ) => {
   }
 }
 `)
-  console.log( response.data.allMarkdownRemark.edges, 'response gatsby-node' )
+  // console.log( response.data.allMarkdownRemark.edges, 'response gatsby-node' )
 
   //create new pages with unique slug
   response.data.allMarkdownRemark.edges.forEach( edge => {
+    // console.log( edge, 'edge markdowns' )
     createPage( {
       component: projectTemplate,
       path: `/projects/${edge.node.fields.slug}`,
       context: {
         slug: edge.node.fields.slug,
+        id: edge.node.id
       },
     } )
   } )
@@ -73,14 +75,16 @@ exports.createPages = async ( { graphql, actions } ) => {
   } )
 }
 
+// commented out for now 
+//because causes build issues.  
 
-exports.onCreatePage = async ( { page, actions } ) => {
-  const { createPage } = actions
-  if ( page.path.match( /^\/app/ ) ) {
-    page.matchPath = "/app/*"
-    createPage( page )
-  }
-}
+// exports.onCreatePage = async ( { page, actions } ) => {
+//   const { createPage } = actions
+//   if ( page.path.match( /^\/app/ ) ) {
+//     page.matchPath = "/app/*"
+//     createPage( page )
+//   }
+// }
 
 
 

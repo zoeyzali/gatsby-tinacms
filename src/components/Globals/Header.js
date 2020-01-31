@@ -5,7 +5,7 @@ import { isLoggedIn, logout, getUser } from "../AuthUtils/Auth"
 
 const Header = () => {
     return (
-        <header className="flex justify-around bg-white lg:mt-5 lg:px-6">
+        <header className="flex justify-around bg-white lg:mt-3 lg:px-6">
             <div className="header w-full py-6 xl:mt-6 flex-wrap">
                 <Link
                     to="/"
@@ -50,6 +50,7 @@ const Header = () => {
                         </Link>
                     )}
             </div>
+            <hr className="mb-4 shadow-xl" />
         </header>
     )
 }

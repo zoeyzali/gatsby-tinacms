@@ -92,7 +92,6 @@ const ProjectTemplateOptions = {
     ]
 }
 
-// export default Project
 export default remarkForm( Project, ProjectTemplateOptions )
 
 export const getProjectData = graphql`

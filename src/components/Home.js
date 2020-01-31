@@ -1,8 +1,8 @@
 import React from 'react'
-import Helmet from 'react-helmet'
-import CaseStudy from './CaseStudy'
+import CurrentExhibitions from './CurrentExhibitions'
 
-const Home = () => {
+
+const Home = ( { data } ) => {
     return (
         <div className="container mx-auto">
             <div className="w-full antialiased text-center py-5 xl:py-10 text-gray-800">
@@ -15,12 +15,14 @@ const Home = () => {
                 </h2>
                 </div>
             </div>
-            <hr className="pb-2 shadow-xl" />
-            <div className="container mx-auto py-2 w-full">
-                <CaseStudy />
-            </div>
+            <hr className="mb-4 shadow-xl" />
+            <CurrentExhibitions data={data} />
         </div>
     )
 }
 
+
+
 export default Home
+
+
