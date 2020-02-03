@@ -49,6 +49,13 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "posters",
+    //     path: `${__dirname}/src/posters`,
+    //   },
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {

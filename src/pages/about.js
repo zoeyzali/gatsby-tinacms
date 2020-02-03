@@ -83,7 +83,6 @@ const AboutPage = () => {
                     )
                 }}
                 />
-                <Contact />
             </div>
         </Layout>
     )

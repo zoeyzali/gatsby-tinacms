@@ -1,16 +1,11 @@
-[build]
-  command = "gatsby build"
-  #functions = "functions"
-  publish = "public"
-
   [[redirects]]
  from = "/*"
 to = "/index.html"
 
   [[redirects]]
-from= "/app/admin.js "
-to=  "/app"
+from = "/app/admin"
+to = "/app"
 
   [[redirects]]
-from= "/app/login"
-to= "/app"
+from = "/app/login"
+to = "/app"

@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Home from "../components/Home"
+import Contact from "../components/Contact"
+
 import { graphql } from "gatsby"
 
 
@@ -55,20 +57,11 @@ export const query = graphql`
 `
 
 const IndexPage = ( { data } ) => {
-  // console.log( data.currentExhibitions, 'current queries from IndexPage' )
-  // console.log( data.allExhitbitions, 'all queries from IndexPage' )
-  // const currentExhibitions = data.currentExhibitions.edges.map( ( { node: current } ) => {
-  //   return <ExhibitionsList exhibition={current} key={current.id} />
-  // } )
-  // const allExhitbitions = data.allExhitbitions.edges.map( ( { node: exhibition } ) => {
-  //   return <ExhibitionsList exhibition={exhibition} key={exhibition.id} />
-  // } )
-
-  console.log( data.allExhitbitions, 'current and all' )
   return (
     <Layout>
       <SEO title={`COCO. Collective`} />
       <Home data={data.currentExhibitions} />
+      <Contact />
     </Layout>
   )
 }

@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import CaseStudy from '../components/CaseStudy'
 import { graphql } from 'gatsby'
 
+
 export const query = graphql`
 {
   allExhitbitions: allContentfulExhibitions( sort: { fields: eventDate, order: DESC } ) {

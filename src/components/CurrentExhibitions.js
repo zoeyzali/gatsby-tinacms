@@ -5,15 +5,14 @@ import Img from 'gatsby-image'
 
 const CurrentExhibitions = ( { data } ) => {
     const today = new Date().toISOString().slice( 0, 10 )
-
     return (
-        <div className="text-gray-800 antialiased">
-            <h1 className="font-medium tracking-tighter text-center">cur<span className="bg-yellow-800 tracking-widest shadow-lg text-md">rent shows
+        <div className="text-gray-800 antialiased py-4">
+            <h1 className="font-medium tracking-tighter text-center">cur<span className="bg-yellow-800 tracking-widest shadow-xl">rent shows
                 </span>
                 <br />
-                <span className="px-2 text-sm font-semibold leading-tight">date today:  {today}</span>
+                <span className="px-2 text-sm font-semibold leading-wide">date today:  {today}</span>
             </h1>
-            <div className="mt-2 shadow-lg text-sm text-center">
+            <div className="text-sm text-center">
                 <Link to={`${/exhibitions/}`}>
                     Check out our <span className="tracking-tight text-sm bg-yellow-800">previous exhibitions</span>
                 </Link>
