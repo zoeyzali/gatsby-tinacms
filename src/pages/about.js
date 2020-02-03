@@ -29,7 +29,7 @@ const getArtistBio = graphql`
 const AboutPage = () => {
     return (
         <Layout>
-            <SEO title={`About`} />
+            <SEO title="About" />
             <div className="container mx-auto mt-auto lg:mt-4">
                 <h1 className="antialiased tracking-wider font-display mt-8 pt-3 pb-5 text-center">
                     visual art & illustrations collective</h1>
@@ -73,7 +73,8 @@ const AboutPage = () => {
                                             </div>
                                             <div className="px-4 mt-4">
                                                 <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-2">#COCO.collective</span>
-                                                <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-2">#ArtStudioPortfolio</span>
+                                                <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-2">#ArtStudioPortfolio
+                                                </span>
                                             </div>
                                         </div>
                                     </div>

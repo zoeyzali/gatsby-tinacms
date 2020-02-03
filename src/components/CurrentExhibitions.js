@@ -9,16 +9,19 @@ const CurrentExhibitions = ( { data } ) => {
         <div className="text-gray-800 antialiased py-4">
             <h1 className="font-medium tracking-tighter text-center">cur<span className="bg-yellow-800 tracking-widest shadow-xl">rent shows
                 </span>
-                <br />
-                <span className="px-2 text-sm font-semibold leading-wide">date today:  {today}</span>
             </h1>
+            <span className="text-sm font-semibold tracking-tight">today:  {today}</span>
+            <br />
             <div className="text-sm text-center">
                 <Link to={`${/exhibitions/}`}>
                     Check out our <span className="tracking-tight text-sm bg-yellow-800">previous exhibitions</span>
                 </Link>
             </div>
 
-            <div className="flex container mx-auto justify-center flex-wrap mt-8 py-4">
+            <h3 className="font-display text-center mt-8 pt-5">
+                upcoming shows
+           </h3>
+            <div className="flex container mx-auto justify-center flex-wrap mt-4 py-2">
                 {data.edges.map( ( { node: current } ) => {
                     return (
                         <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/4 bg-white border rounded-lg shadow-xl lg:mb-3 xl:mb-4 mb-2 py-2"

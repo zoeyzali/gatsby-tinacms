@@ -59,7 +59,7 @@ export const query = graphql`
 const IndexPage = ( { data } ) => {
   return (
     <Layout>
-      <SEO title={`COCO. Collective`} />
+      <SEO title="COCO. Collective" />
       <Home data={data.currentExhibitions} />
       <Contact />
     </Layout>
