@@ -26,10 +26,10 @@ const HomePageUI = () => {
             <div className="container mx-auto">
                 <div className="inner-content">
                     <div className="content text-gray-800">
-                        <h1 className="font-semibold break-normal">The ability to create</h1>
+                        <h1 className="font-semibold font-display break-normal">The ability to create</h1>
                         <p className="font-medium">
                             we are an interdesciplinary artist collective. we make socially conscious and sometimes provacative films, installations, illustration, visual and sound design. some call us pretentious AF collective. don't know if we personally agree with that.
-                                </p>
+                            </p>
                     </div>
                     <div className="images">
                         <div className="top-right">

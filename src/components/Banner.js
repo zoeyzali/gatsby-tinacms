@@ -14,7 +14,7 @@ const Banner = () => {
                 }
             }
         }
-        paintArt: file( relativePath: { eq: "posters/create-space.jpeg" } ){
+        paintArt: file( relativePath: { eq: "posters/london-underground.jpeg" } ){
     childImageSharp{
         fluid( maxWidth: 250 ){
     ...GatsbyImageSharpFluid
@@ -36,18 +36,17 @@ const Banner = () => {
             <div className="container mx-auto">
                 <div className="row">
                     <div className="side-image left">
-                        <Img fluid={data.artSign.childImageSharp.fluid} alt={data.artSign.childImageSharp.fluid} className="rounded-lg shadow-lg" />
+                        <Img fluid={data.paintArt.childImageSharp.fluid} alt={data.paintArt.childImageSharp.fluid} className="rounded-lg shadow-lg" />
                     </div>
                     <div className="main-text">
-                        <h1 className="tracking-widest uppercase font-bold">ARTIST COLLECTIVE & Studios</h1>
+                        <h1 className="tracking-widest font-semibold font-display md:tracking-tighest">artist collective & studios</h1>
                     </div>
                     <div className="main-image">
                         <Img fluid={data.filmArt.childImageSharp.fluid} alt={data.filmArt.childImageSharp.fluid} className="rounded-lg shadow-lg" />
-
                     </div>
 
                     <div className="side-image right">
-                        <Img fluid={data.paintArt.childImageSharp.fluid} alt={data.paintArt.childImageSharp.fluid} className="rounded-lg shadow-lg" />
+                        <Img fluid={data.artSign.childImageSharp.fluid} alt={data.artSign.childImageSharp.fluid} className="rounded-lg shadow-lg" />
                     </div>
                 </div>
             </div>

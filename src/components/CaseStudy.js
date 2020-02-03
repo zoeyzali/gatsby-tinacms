@@ -10,17 +10,17 @@ const CaseStudy = () => {
     return (
         <div className="flex justify-center shadow-md text-gray-800 pt-8">
             <div className="bg-gray-100 px-2 rounded-lg shadow-lg">
-                <h1 className="font-semibold uppercase text-lg md:text-xl lg:text-2xl xl:text-5xl tracking-wider px-2 mt-2 xl:mt-4">
+                <h2 className="font-semibold uppercase">
                     <span className="bg-yellow-800 tracking-widest align-middle shadow-lg">
-                        case</span>study</h1>
+                        case</span>study</h2>
 
                 {caseData.edges.map( ( { node: singleCase } ) => {
                     return (
-                        <div className="flex flex-wrap text-gray-800"
+                        <div className="flex flex-wrap"
                             key={singleCase.id}>
                             <div className="w-full lg:w-5/6 mx-auto flex">
                                 <div className="w-full lg:w-1/2 bg-white rounded-lg px-2">
-                                    <h3 className="font-semibold text-lg sm:text-sm md: text-lg lg:text-xl xl:text-3xl mt-2 xl:mt-4 xl:tracking-widest">
+                                    <h3 className="font-semibold mt-3 xl:mt-6 xl:tracking-widest">
                                         {singleCase.title}
                                     </h3>
 

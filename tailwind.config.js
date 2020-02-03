@@ -2,9 +2,6 @@ const { colors } = require( 'tailwindcss/defaultTheme' )
 
 module.exports = {
   theme: {
-    // container: {
-    //   center: true,
-    // },
     screens: {
       'sm': '425px',
       'md': [
@@ -34,6 +31,12 @@ module.exports = {
           "800": "#f22196"
         }
       }
+    },
+    fontFamily: {
+      body: ["Montserrat", "sans-serif"],
+      // display: ["Anisette-Bold", "sans-serif"],
+      display: ["MonumentExtended-Regular", "Helvetica Neue", "sans-serif"],
+      experimental: ["MonumentExtended-Ultrabold", "sans-serif"]
     }
   },
   variants: {

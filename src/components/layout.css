@@ -24,7 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Montserrat',
     sans-serif;
-  word-wrap: break-word;
+
 }
 
 a {
@@ -48,10 +48,6 @@ li {
 }
 
 .project-page,
-h1,
-h2,
-h3,
-h4,
 h5,
 h6,
 p,
@@ -59,6 +55,8 @@ footer,
 a {
   font-family: 'Montserrat', sans-serif !important;
 }
+
+
 
 
 @media only screen and (max-width: 480px) {
@@ -71,11 +69,13 @@ a {
   }
 }
 
+
 .banner {
   display: flex;
   align-items: center;
   background-color: #fff;
   position: relative;
+
 }
 
 .row {
@@ -95,17 +95,19 @@ a {
 }
 
 .main-image {
-  width: 500px;
+  width: 480px;
   margin: 0 auto;
+
 }
 
 .side-image {
-  width: 380px;
+  width: 350px;
   position: absolute;
+
 }
 
 .left {
-  left: 5px;
+  left: 2px;
   top: 0;
 }
 
@@ -135,15 +137,15 @@ a {
 }
 
 .images {
-  width: 50%;
-  height: 800px;
+  width: 60%;
+  height: 900px;
   position: relative;
   z-index: 7;
 }
 
 .top-right {
   position: absolute;
-  width: 320px;
+  width: 340px;
   top: 0;
   right: 5px;
   z-index: 4;
@@ -151,15 +153,15 @@ a {
 
 .bottom-left {
   position: absolute;
-  width: 260px;
-  left: 0;
+  width: 280px;
+  left: 15px;
   bottom: 0;
 }
 
 .black-box {
   background-color: black;
-  height: 550px;
-  width: 630px;
+  height: 500px;
+  width: 650px;
   position: absolute;
   right: 5px;
   top: 50%;
@@ -178,7 +180,7 @@ a {
   }
 
   .main-text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 12px;
   }
 
@@ -204,11 +206,11 @@ a {
 
   .content {
     width: 100%;
-    margin: 0;
+    margin: 20px 0 80px;
   }
 
   .images {
-    height: 360px;
+    height: 400px;
     width: 100%;
   }
 
@@ -222,12 +224,12 @@ a {
 
   .black-box {
     width: 100%;
-    height: 300px;
-    top: 55%;
+    height: 360px;
+    top: 65%;
   }
 }
 
-@media all and (max-width: 786px) and (min-width: 508px) {
+@media all and (max-width: 886px) and (min-width: 508px) {
   .main-text {
     font-size: 1.8rem;
     letter-spacing: 16px;
@@ -238,7 +240,7 @@ a {
   }
 
   .side-image {
-    width: 180px
+    width: 190px
   }
 
 
@@ -251,7 +253,7 @@ a {
   }
 
   .images {
-    height: 400px;
+    height: 380px;
     width: 100%;
   }
 

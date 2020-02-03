@@ -31,7 +31,7 @@ const AboutPage = () => {
         <Layout>
             <SEO title={`About`} />
             <div className="container mx-auto mt-auto lg:mt-4">
-                <h1 className="antialiased tracking-wider font-light mt-8 pt-3 pb-5 text-center">
+                <h1 className="antialiased tracking-wider font-display mt-8 pt-3 pb-5 text-center">
                     visual art & illustrations collective</h1>
                 <div className="flex-row container mx-auto px-0 lg:px-4 flex-wrap text-gray-700 self-center">
                     <div className="flex-col float-left shadow-lg font-semibold">

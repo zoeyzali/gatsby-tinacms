@@ -36,8 +36,8 @@ export const query = graphql`
 const exhibitions = ( { data } ) => (
   <Layout>
     <SEO title="Exhibitions & Shows" />
-    <div className="container mx-auto px-4 rounded-lg overflow-hidden mt-7 py-6">
-      <h1 className="font-medium text-center sm:text-md px-2">Recent & curr<span className="bg-yellow-800 tracking-widest shadow-lg">ent Exhibitions</span>
+    <div className="container mx-auto rounded-lg overflow-hidden mt-7 lg:mt-10 py-6 sm:py-8">
+      <h1 className="font-medium text-center px-2">Recent & curr<span className="bg-yellow-800 tracking-widest shadow-lg">ent Exhibitions</span>
       </h1>
       <CaseStudy />
       <ExhibitionsList allExhitbitions={data.allExhitbitions} />
